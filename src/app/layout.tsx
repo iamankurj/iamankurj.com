@@ -116,7 +116,7 @@ export default function RootLayout({
 					}}
 					gradient={{
 						display: true,
-						opacity: 0.4,
+						opacity: 0.5,
 					}}/>
 				<Flex
 					flex={1} direction="column">
