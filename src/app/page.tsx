@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, Logo, LetterFx, Arrow } from '@/once-ui/components';
+import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, SmartImage, LetterFx } from '@/once-ui/components';
 import Link from 'next/link';
 
 export default function Home() {
@@ -48,7 +48,17 @@ export default function Home() {
             <Flex
               position="relative"
               flex={2} paddingTop="56" paddingX="xl">
-              <Logo size="xl" icon={false} style={{ zIndex: '1' }} href="https://once-ui.com" />
+              <Flex
+                minHeight={10} minWidth={10}
+                maxWidth={10} maxHeight={10}>
+                <SmartImage
+                  src="/images/me_by_the_river.jpg"
+                  alt="Ankur J"
+                  aspectRatio="1"
+                  radius="full"
+                  objectFit="cover"
+                />
+              </Flex>
             </Flex>
             <Flex
               position="relative"
@@ -69,7 +79,7 @@ export default function Home() {
                 <span className="font-code">
                   <LetterFx
                     trigger="instant">
-                    Welcome to My World! Step inside and explore the passions that fuel my geeky pursuits.
+                    Welcome to My World! Dive in for a sneak peek at the passions I geek out about.
                   </LetterFx>
                 </span>
               </Heading>
