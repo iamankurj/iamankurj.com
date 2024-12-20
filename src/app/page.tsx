@@ -2,10 +2,14 @@
 
 import React from 'react';
 
-import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, SmartImage, LetterFx } from '@/once-ui/components';
+import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, SmartImage, LetterFx, IconButton } from '@/once-ui/components';
+import { useBreakpoint } from '@/once-ui/hooks';
 import Link from 'next/link';
+import { socials } from '@/once-ui/resources/config';
 
 export default function Home() {
+  const breakpoint = useBreakpoint();
+
   const links = [
     {
       href: "https://once-ui.com/docs/theming",
@@ -71,7 +75,7 @@ export default function Home() {
                   padding: 'var(--static-space-8) var(--static-space-16)',
                   backdropFilter: 'blur(var(--static-space-1))'
                 }}>
-                Start by editing <span className="brand-on-background-medium">app/page.tsx</span>
+                Welcome to <span className="brand-on-background-medium">My World!</span>
               </InlineCode>
               <Heading
                 wrap="balance"
@@ -79,19 +83,10 @@ export default function Home() {
                 <span className="font-code">
                   <LetterFx
                     trigger="instant">
-                    Welcome to My World! Dive in for a sneak peek at the passions I geek out about.
+                    Dive in for a sneak peek at the passions I geek out about.
                   </LetterFx>
                 </span>
               </Heading>
-              {/* <Button
-                id="readDocs"
-                href="https://once-ui.com/docs"
-                variant="secondary">
-                <Flex alignItems="center">
-                  Read docs
-                  <Arrow trigger="#readDocs" />
-                </Flex>
-              </Button> */}
             </Flex>
           </Flex>
           <Grid
@@ -142,16 +137,29 @@ export default function Home() {
         </Text>
         <Flex
           gap="12">
-          <Button
-            href="https://github.com/once-ui-system/nextjs-starter"
-            prefixIcon="github" size="s" variant="tertiary">
-            GitHub
-          </Button>
-          <Button
-            href="https://discord.com/invite/5EyAQ4eNdS"
-            prefixIcon="discord" size="s" variant="tertiary">
-            Discord
-          </Button>
+          {breakpoint === 'sm' ? (
+            socials.map((social) => (
+              <IconButton
+                key={social.href}
+                href={social.href}
+                icon={social.icon}
+                size="s"
+                variant="tertiary"
+                tooltip={social.title} />
+            ))
+          ) : (
+            socials.map((social) => (
+              <Button
+                key={social.href}
+                href={social.href}
+                prefixIcon={social.icon}
+                size="s"
+                variant="tertiary">
+                {social.title}
+              </Button>
+            ))
+          )
+          }
         </Flex>
       </Flex>
     </Flex>

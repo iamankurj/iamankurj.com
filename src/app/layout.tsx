@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { headers } from "next/headers";
 import { Metadata } from "next";
 
-import { baseURL, style, meta, og, schema, social } from "@/once-ui/resources/config"
+import { baseURL, style, meta, og, schema, socials } from "@/once-ui/resources/config"
 
 import { Background, Flex } from '@/once-ui/components'
 
@@ -74,7 +74,7 @@ const schemaData = {
 	"name": schema.name,
 	"description": schema.description,
 	"email": schema.email,
-	"sameAs": Object.values(social).filter(Boolean)
+  "sameAs": socials.map(social => social.href).filter(Boolean)
 };
 
 export default function RootLayout({
