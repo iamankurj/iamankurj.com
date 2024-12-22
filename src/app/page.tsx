@@ -12,22 +12,22 @@ export default function Home() {
 
   const links = [
     {
-      href: "https://once-ui.com/docs/theming",
+      href: "/singing",
       title: "Vocal Vibes",
       description: "The Singer in Me",
     },
     {
-      href: "https://once-ui.com/docs/flexComponent",
-      title: "Tech Tracks",
+      href: "/tech",
+      title: "Tech Tales",
       description: "The Techie in Me",
     },
     {
-      href: "https://once-ui.com/docs/typography",
-      title: "Money Maven",
-      description: "The Finance Fanatic in Me",
+      href: "/finance",
+      title: "Finance Fanatic",
+      description: "The Money Nerd in Me",
     },
     {
-      href: "https://once-ui.com/docs/typography",
+      href: "/fitness",
       title: "Fit Frenzy",
       description: "The Fitness Buff in Me",
     },
@@ -37,7 +37,7 @@ export default function Home() {
     <Flex
       fillWidth paddingTop="l" paddingX="l"
       direction="column" alignItems="center" flex={1}>
-      <Flex
+      <Flex /* body section */
         position="relative"
         as="section" overflow="hidden"
         fillWidth minHeight="0" maxWidth={68}
@@ -46,7 +46,7 @@ export default function Home() {
           as="main"
           direction="column" justifyContent="center"
           fillWidth fillHeight padding="l" gap="l">
-          <Flex
+          <Flex /* top */
             mobileDirection="column"
             fillWidth gap="24">
             <Flex
@@ -83,13 +83,13 @@ export default function Home() {
                 <span className="font-code">
                   <LetterFx
                     trigger="instant">
-                    Dive in for a sneak peek at the passions I geek out about.
+                    a sneak peek at the passions I geek out about
                   </LetterFx>
                 </span>
               </Heading>
             </Flex>
           </Flex>
-          <Grid
+          <Grid /* bottom */
             radius="l"
             border="neutral-medium"
             borderStyle="solid-1"
@@ -100,7 +100,6 @@ export default function Home() {
             fillWidth>
             {links.map((link) => (
               <Link
-                target="_blank"
                 style={{ padding: 'var(--responsive-space-m)' }}
                 key={link.href}
                 href={link.href}>
@@ -126,7 +125,7 @@ export default function Home() {
           </Grid>
         </Flex>
       </Flex>
-      <Flex
+      <Flex /* footer section */
         as="footer"
         position="relative"
         fillWidth paddingX="l" paddingY="m"
