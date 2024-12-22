@@ -18,7 +18,7 @@ export default function Home() {
     },
     {
       href: "/tech",
-      title: "Tech Tales",
+      title: "Tech Tracks",
       description: "The Techie in Me",
     },
     {
