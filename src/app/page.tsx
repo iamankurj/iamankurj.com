@@ -1,7 +1,9 @@
 "use client";
 
 
-import { Footer } from '@/components/layout/Footer/Footer';
+import { Footer } from '@/components/layout/Footer';
+import { MainSection } from '@/components/layout/MainSection';
+import { PageLayout } from '@/components/layout/PageLayout';
 import { Flex, Grid, Heading, Icon, InlineCode, LetterFx, SmartImage, Text } from '@/once-ui/components';
 import Link from 'next/link';
 
@@ -31,14 +33,8 @@ export default function Home() {
   ];
 
   return (
-    <Flex
-      fillWidth paddingTop="l" paddingX="l"
-      direction="column" alignItems="center" flex={1}>
-      <Flex /* body section */
-        position="relative"
-        as="section" overflow="hidden"
-        fillWidth minHeight="0" maxWidth={68}
-        direction="column" alignItems="center" flex={1}>
+    <PageLayout>
+      <MainSection>
         <Flex
           as="main"
           direction="column" justifyContent="center"
@@ -121,8 +117,8 @@ export default function Home() {
             ))}
           </Grid>
         </Flex>
-      </Flex>
+      </MainSection>
       <Footer></Footer>
-    </Flex>
+    </PageLayout>
   );
 }
