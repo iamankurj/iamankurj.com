@@ -5,7 +5,8 @@ import classNames from 'classnames';
 import { headers } from "next/headers";
 import { Metadata } from "next";
 
-import { baseURL, style, meta, og, schema, socials } from "@/once-ui/resources/config"
+import { baseURL, style, meta, og, schema } from "@/resources/config"
+import { socials } from "@/resources/content"
 
 import { Background, Flex } from '@/once-ui/components'
 

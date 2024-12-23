@@ -1,18 +1,14 @@
 "use client";
 
 import { Footer } from '@/components/layout/Footer';
-import { Flex, GlitchFx, Heading, InlineCode, RevealFx, SmartImage } from '@/once-ui/components';
+import { MainSection } from '@/components/layout/MainSection';
+import { PageLayout } from '@/components/layout/PageLayout';
+import { Flex, GlitchFx, Heading, InlineCode, SmartImage } from '@/once-ui/components';
 
-export default function SingingPage() {
+export default function FinanceHome() {
   return (
-    <Flex
-      fillWidth paddingTop="l" paddingX="l"
-      direction="column" alignItems="center" flex={1}>
-      <Flex /* body section */
-        position="relative"
-        as="section" overflow="hidden"
-        fillWidth minHeight="0" maxWidth={68}
-        direction="column" alignItems="center" flex={1}>
+    <PageLayout>
+      <MainSection>
         <Flex
           as="main"
           direction="column" justifyContent="center"
@@ -68,8 +64,8 @@ export default function SingingPage() {
             </Flex>
           </Flex>
         </Flex>
-      </Flex>
+      </MainSection>
       <Footer></Footer>
-    </Flex>
+    </PageLayout>
   );
 }

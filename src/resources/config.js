@@ -1,5 +1,3 @@
-import { title } from "process"
-
 const baseURL = 'demo.once-ui.com'
 
 // default customization applied to the HTML in the main layout.tsx
@@ -22,7 +20,6 @@ const meta = {
   description: 'An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.'
 }
 
-
 // default open graph data
 const og = {
   title: 'Once UI for Next.js',
@@ -39,28 +36,4 @@ const schema = {
   email: 'lorant@once-ui.com'
 }
 
-// social links
-const socials = [
-  {
-    title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/iamankurj/',
-    icon: 'linkedin'
-  },
-  {
-    title: 'Instagram',
-    href: 'https://instagram.com/i.am.ankur.j',
-    icon: 'instagram'
-  },
-  {
-    title: 'GitHub',
-    href: 'https://github.com/iamankurj',
-    icon: 'github'
-  },
-  {
-    title: 'YouTube',
-    href: 'https://youtube.com/@iamankurj',
-    icon: 'youtube'
-  }
-]
-
-export { baseURL, style, meta, og, schema, socials };
+export { baseURL, meta, og, schema, style }

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Flex, Text, Button, IconButton } from '@/once-ui/components';
 import { useBreakpoint } from '@/once-ui/hooks';
-import { socials } from '@/once-ui/resources/config';
+import { socials } from '@/resources/content'
 
 export function Footer() {
   const breakpoint = useBreakpoint();
