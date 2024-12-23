@@ -1,14 +1,11 @@
 "use client";
 
-import React from 'react';
 
-import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, SmartImage, LetterFx, IconButton } from '@/once-ui/components';
-import { useBreakpoint } from '@/once-ui/hooks';
+import { Footer } from '@/components/layout/Footer/Footer';
+import { Flex, Grid, Heading, Icon, InlineCode, LetterFx, SmartImage, Text } from '@/once-ui/components';
 import Link from 'next/link';
-import { socials } from '@/once-ui/resources/config';
 
 export default function Home() {
-  const breakpoint = useBreakpoint();
 
   const links = [
     {
@@ -125,42 +122,7 @@ export default function Home() {
           </Grid>
         </Flex>
       </Flex>
-      <Flex /* footer section */
-        as="footer"
-        position="relative"
-        fillWidth paddingX="l" paddingY="m"
-        justifyContent="space-between">
-        <Text
-          variant="body-default-s" onBackground="neutral-weak">
-          2024 Once UI, <Link href="https://github.com/once-ui-system/nextjs-starter?tab=MIT-1-ov-file">MIT License</Link>
-        </Text>
-        <Flex
-          gap="12">
-          {breakpoint === 'sm' ? (
-            socials.map((social) => (
-              <IconButton
-                key={social.href}
-                href={social.href}
-                icon={social.icon}
-                size="s"
-                variant="tertiary"
-                tooltip={social.title} />
-            ))
-          ) : (
-            socials.map((social) => (
-              <Button
-                key={social.href}
-                href={social.href}
-                prefixIcon={social.icon}
-                size="s"
-                variant="tertiary">
-                {social.title}
-              </Button>
-            ))
-          )
-          }
-        </Flex>
-      </Flex>
+      <Footer></Footer>
     </Flex>
   );
 }
