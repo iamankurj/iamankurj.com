@@ -16,9 +16,12 @@ import {
   HiOutlineLink,
   HiExclamationTriangle,
   HiArrowUpRight,
+  HiMiniGlobeAsiaAustralia,
   HiInformationCircle,
   HiExclamationCircle,
   HiCheckCircle,
+  HiCalendarDays,
+  HiEnvelope
 } from "react-icons/hi2";
 
 import {
@@ -41,6 +44,8 @@ export const iconLibrary: Record<string, IconType> = {
   errorCircle: HiExclamationCircle,
   checkCircle: HiCheckCircle,
   eyeDropper: HiEyeDropper,
+  email: HiEnvelope,
+  globe: HiMiniGlobeAsiaAustralia,
   person: HiMiniUser,
   close: HiMiniXMark,
   openLink: HiOutlineLink,
@@ -51,4 +56,5 @@ export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   minus: HiMiniMinus,
   plus: HiMiniPlus,
+  calendar: HiCalendarDays
 };
