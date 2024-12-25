@@ -6,7 +6,6 @@ import { headers } from "next/headers";
 import { Metadata } from "next";
 
 import { baseURL, style, meta, og, schema } from "@/resources/config"
-import { socials } from "@/resources/content"
 
 import { Background, Flex } from '@/once-ui/components'
 
@@ -67,17 +66,6 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-const schemaData = {
-	"@context": "https://schema.org",
-	"@type": schema.type,
-	"url": "https://" + baseURL,
-	"logo": schema.logo,
-	"name": schema.name,
-	"description": schema.description,
-	"email": schema.email,
-  "sameAs": socials.map(social => social.href).filter(Boolean)
-};
-
 export default function RootLayout({
   	children,
 }: Readonly<{
@@ -100,7 +88,7 @@ export default function RootLayout({
 			<head>
 				<script
 					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
 				/>
 			</head>
 			<Flex

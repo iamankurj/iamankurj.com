@@ -10,9 +10,11 @@ export function Footer() {
     <Flex
       as="footer"
       position="relative"
-      fillWidth paddingX="l" paddingY="m"
+      fillWidth 
+      paddingX="l" 
+      paddingY="m"
       justifyContent="space-between">
-      <Text
+      <Text style={{border: '1px solid white'}} /* left */
         variant="body-default-s"
         onBackground="neutral-strong">
         <Text
@@ -24,10 +26,10 @@ export function Footer() {
         </Text>
         <Text onBackground="neutral-weak">
           {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
-          / Build your own with <SmartLink style={{ marginLeft: '-0.125rem' }} href="https://once-ui.com/templates/magic-portfolio">Once UI</SmartLink>
+          / Build your own with <SmartLink style={{ marginLeft: '-0.125rem' }} href="https://once-ui.com">Once UI</SmartLink>
         </Text>
       </Text>
-      <Flex gap="12">
+      <Flex style={{border: '1px solid red'}} gap="12"> {/* right */}
         {socials.map((social) => (
           <IconButton
             key={social.href}
