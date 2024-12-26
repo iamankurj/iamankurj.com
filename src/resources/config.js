@@ -34,7 +34,7 @@ const og = {
   description: description,
   type: 'website',
   url: 'https://' + baseURL,
-  // image: 'https://'+baseURL+'/og-image.jpg', // Social media platforms typically recommend a specific size for og:image (e.g., 1200x630 pixels) to ensure the image is displayed correctly.
+  image: 'https://'+baseURL+'/images/og_image.jpg', // Social media platforms typically recommend a specific size for og:image (e.g., 1200x630 pixels) to ensure the image is displayed correctly.
   site_name: name
 }
 
@@ -46,7 +46,7 @@ const schema = {
   description: description,
   url: "https://" + baseURL,
   sameAs: socials.map(social => social.href).filter(Boolean),
-  // image: "https://" + baseURL + "/profile-image.jpg", // While there aren't strict size requirements for schema:image, it should be a high-quality image that accurately represents you or your brand.
+  image: "https://" + baseURL + "/images/og_image.jpg", // While there aren't strict size requirements for schema:image, it should be a high-quality image that accurately represents you or your brand.
   logo: '',
   // email: 'lorant@once-ui.com',
 }
