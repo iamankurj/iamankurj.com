@@ -10,11 +10,13 @@ export function Footer() {
     <Flex
       as="footer"
       position="relative"
-      fillWidth 
-      paddingX="l" 
+      fillWidth
+      paddingX="l"
       paddingY="m"
-      justifyContent="space-between">
-      <Text style={{border: '1px solid white'}} /* left */
+      justifyContent="space-between"
+      gap="m"
+      wrap={true}>
+      <Text /* copyright stuff */
         variant="body-default-s"
         onBackground="neutral-strong">
         <Text
@@ -29,7 +31,7 @@ export function Footer() {
           / Build your own with <SmartLink style={{ marginLeft: '-0.125rem' }} href="https://once-ui.com">Once UI</SmartLink>
         </Text>
       </Text>
-      <Flex style={{border: '1px solid red'}} gap="12"> {/* right */}
+      <Flex gap="12"> {/* socials */}
         {socials.map((social) => (
           <IconButton
             key={social.href}
