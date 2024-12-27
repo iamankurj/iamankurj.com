@@ -40,8 +40,8 @@ const resume = {
     title: 'TL;DR',
     items: [
       { line: <>9+ years of experience in the software industry, demonstrating strong problem-solving, technical, and interpersonal skills</> },
-      { line: <>Developed features impacting over 900 million users using at Meta</> },
-      { line: <>5+ years of experience developing and maintaining scalable microservices in GoLang</> },
+      { line: <>Developed features impacting over 900 million users (at Meta)</> },
+      { line: <>4+ years of experience developing and maintaining scalable microservices in GoLang</> },
       { line: <>3+ years of experience developing backend applications with Java/J2EE, REST, and Spring Boot</> },
       { line: <>1 year of experience in UI development using ExtJS, JS, HTML, CSS, and Java backend</> }
     ]
@@ -60,7 +60,7 @@ const resume = {
           {
             line: <><StrongText>Engineering Lead</StrongText> for</>,
             subItems: [
-              { line: <><StrongText>Flow Visualizer</StrongText>: A mission-critical project central to enhancing marketer experience, and the company’s top priority</> },
+              { line: <><StrongText>Flow Visualizer</StrongText>: A mission-critical project central to enhancing marketer experience on the platform</> },
               { line: <><StrongText>Merchant Offers Solution</StrongText>: A new project enabling local merchants to deliver personalized rewards programs efficiently to end users</> }
             ]
           },
@@ -80,27 +80,27 @@ const resume = {
         items: [
           { line: <>Owned the team’s <StrongText>mission critical end-to-end encryption projects</StrongText> for Messenger and Instagram Direct</> },
           { line: <>Implemented new well-being features for Messenger group chat and community messaging</> },
-          { line: <>More than 80% overall test coverage and 100% significant code coverage for the new code</> },
-          { line: <>0 QA bugs identified in the new code</> },
-          { line: <>Heavy cross-functional collaboration with several teams</> },
-          { line: <>One of the top Docuthon contributors from the Well-Being org.</> },
-          { line: <>One of the top 25% privacy contributors at Meta</> },
-          { line: <>Responsible for mentoring interns in the team</> },
+          { line: <>More than <StrongText>80% overall test coverage</StrongText> and <StrongText>100% significant code coverage</StrongText> for the new code</> },
+          { line: <><StrongText>0 QA bugs</StrongText> identified in the new code</> },
+          { line: <><StrongText>Extensive cross-functional collaboration</StrongText> with several teams</> },
+          { line: <>One of the <StrongText>top Docuthon contributors</StrongText> from the Well-Being org.</> },
+          { line: <>One of the <StrongText>top 25% privacy contributors</StrongText> at Meta</> },
+          { line: <>Responsible for <StrongText>mentoring interns</StrongText> in the team</> },
         ],
       },
       {
         company: "Flybits",
         role: 'Senior Backend Engineer',
         location: 'Canada',
-        startDate: "Apr '23",
-        endDate: 'Present',
+        startDate: "May '19",
+        endDate: "Jan '22",
         items: [
           {
-            line: <>Owned/designed/implemented/supervised multiple complex projects, each spanning multiple services</>,
+            line: <>Owned/designed/implemented/supervised <StrongText>multiple complex projects</StrongText>, each <StrongText>spanning multiple services</StrongText></>,
             subItems: [
-              { line: <>Dynamic location based content and push lifecycle management, saving over 98% of manual time spent per campaign for the biggest client (also making the process far less error prone)</> },
+              { line: <>Dynamic location based content and push lifecycle management, <StrongText>saving over 98% of manual time spent</StrongText> per campaign for the biggest client (also making the process far less error prone)</> },
               { line: <>Templatization 2.0 - Creation of user journeys making it super easy for users to use the product</> },
-              { line: <>Scaled push notifications to support over 6 million users per campaign while ensuring system resilience with starvation prevention, failure recovery and automatic resumption</> },
+              { line: <>Scaled push notifications to <StrongText>support over 6 million users per campaign</StrongText> while ensuring system resilience with starvation prevention, failure recovery and automatic resumption</> },
             ]
           },
           { line: <>Mentored juniors on design principles, code quality, domain knowledge, testing best practices</> },
@@ -140,7 +140,7 @@ const resume = {
       },
       {
         company: "Raw Engineering (Built.io),",
-        role: 'Softwrae Development Intern - Node.js, React',
+        role: 'Software Development Intern - Node.js, React',
         location: 'India',
         startDate: "Jan '15",
         endDate: "June '15",
