@@ -1,35 +1,42 @@
 import { IconType } from 'react-icons';
 
 import {
-  HiChevronUp,
-  HiChevronDown,
-  HiChevronRight,
-  HiChevronLeft,
-  HiOutlineArrowPath,
+  HiArrowUpRight,
+  HiCalendarDays,
   HiCheck,
-  HiMiniQuestionMarkCircle,
+  HiCheckCircle,
+  HiChevronDown,
+  HiChevronLeft,
+  HiChevronRight,
+  HiChevronUp,
+  HiEnvelope,
+  HiExclamationCircle,
+  HiExclamationTriangle,
+  HiEyeDropper,
+  HiInformationCircle,
+  HiMiniGlobeAsiaAustralia,
   HiMiniMinus,
   HiMiniPlus,
-  HiMiniUser,
+  HiMiniQuestionMarkCircle,
   HiMiniXMark,
-  HiEyeDropper,
-  HiOutlineLink,
-  HiExclamationTriangle,
-  HiArrowUpRight,
-  HiMiniGlobeAsiaAustralia,
-  HiInformationCircle,
-  HiExclamationCircle,
-  HiCheckCircle,
-  HiCalendarDays,
-  HiEnvelope
+  HiOutlineArrowPath,
+  HiOutlineLink
 } from "react-icons/hi2";
 
 import {
-  FaLinkedin,
-  FaInstagram,
   FaGithub,
+  FaInstagram,
+  FaLinkedin,
   FaYoutube
 } from "react-icons/fa6";
+
+import {
+  PiBookBookmarkDuotone,
+  PiBriefcaseDuotone,
+  PiCodeBlockDuotone,
+  PiUserCircleDuotone,
+  PiHouseDuotone
+} from "react-icons/pi";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -46,7 +53,7 @@ export const iconLibrary: Record<string, IconType> = {
   eyeDropper: HiEyeDropper,
   email: HiEnvelope,
   globe: HiMiniGlobeAsiaAustralia,
-  person: HiMiniUser,
+  piUserCircleDuotone: PiUserCircleDuotone,
   close: HiMiniXMark,
   openLink: HiOutlineLink,
   linkedin: FaLinkedin,
@@ -56,5 +63,9 @@ export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   minus: HiMiniMinus,
   plus: HiMiniPlus,
-  calendar: HiCalendarDays
+  calendar: HiCalendarDays,
+  piBriefcaseDuotone: PiBriefcaseDuotone,
+  piBookBookmarkDuotone: PiBookBookmarkDuotone,
+  piCodeBlockDuotone: PiCodeBlockDuotone,
+  piHouseDuotone: PiHouseDuotone,
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import { Flex, IconButton, SmartLink, Text } from '@/once-ui/components';
-import { person, socials } from '@/resources/content';
+import { person, socials } from '@/content/shared/person';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
