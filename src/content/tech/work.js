@@ -1,4 +1,4 @@
-import { person } from "@/resources/content";
+import { person } from "@/content/shared/person";
 
 const StrongText = ({ children }) => (
   <span className="neutral-on-background-strong">{children}</span>
@@ -15,7 +15,7 @@ const resume = {
     display: true
   },
   calendar: {
-    display: true,
+    display: false,
     link: 'https://calendar.app.google/27r9rX47penQ1PWD8'
   },
   socials: [
@@ -31,7 +31,7 @@ const resume = {
     },
     {
       title: 'Email',
-      href: 'mailto:ankurjain.2989@gmail.com',
+      href: 'mailto:tech.iamankurj@gmail.com',
       icon: 'email'
     },
   ],
@@ -112,7 +112,7 @@ const resume = {
         role: 'Senior Associate Developer, Collateral Management - PBIT, Mumbai',
         location: 'India',
         startDate: "Aug '17",
-        endDate: "April '19",
+        endDate: "Apr '19",
         items: [
           { line: <>S/w development for OneSource (a data warehouse for Collateral Management) and for UMR (Uncleared Margin Rules) Phase 4 - Java 8, IBM DB2, Sybase and Scala</> },
         ],
@@ -121,8 +121,8 @@ const resume = {
         company: "Credit Suisse",
         role: 'Technical Analyst',
         location: 'India',
-        startDate: "July '15",
-        endDate: "July '17",
+        startDate: "Jul '15",
+        endDate: "Jul '17",
         items: [
           {
             line: <>Prime Services IT, Mumbai (Aug ’16 - July ‘17)</>,
@@ -139,16 +139,16 @@ const resume = {
         ],
       },
       {
-        company: "Raw Engineering (Built.io),",
+        company: "Built.io (Raw Eng.)",
         role: 'Software Development Intern - Node.js, React',
         location: 'India',
         startDate: "Jan '15",
-        endDate: "June '15",
+        endDate: "Jun '15",
       },
     ]
   },
   testimonials: {
-    display: true,
+    display: false,
     title: 'Testimonials',
     items: [
       { line: <>One of the brightest minds and one of the best engineers I worked with</> },
@@ -161,7 +161,7 @@ const resume = {
     ]
   },
   education: {
-    display: true,
+    display: false,
     title: 'Education',
     qualifications: [
       {
@@ -182,14 +182,6 @@ const structure = [
   {
     title: resume.work.title, display: resume.work.display,
     items: resume.work.experiences.map(work => work.company)
-  },
-  {
-    title: resume.testimonials.title, display: resume.testimonials.display,
-    items: resume.testimonials.items.map(testimonial => testimonial.name)
-  },
-  {
-    title: resume.education.title, display: resume.education.display,
-    items: resume.education.qualifications.map(qualification => qualification.name)
   }
 ]
 

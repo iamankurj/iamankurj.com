@@ -1,6 +1,5 @@
 "use client";
 
-
 import { Footer } from '@/components/layout/Footer';
 import { MainSection } from '@/components/layout/MainSection';
 import { PageLayout } from '@/components/layout/PageLayout';
@@ -8,25 +7,24 @@ import { Flex, Grid, Heading, Icon, InlineCode, LetterFx, SmartImage, Text } fro
 import Link from 'next/link';
 
 export default function Home() {
-
   const links = [
     {
-      href: "/singing",
+      href: '/singing',
       title: "Vocal Vibes",
       description: "The Singer in Me",
     },
     {
-      href: "/tech",
+      href: '/tech',
       title: "Tech Tracks",
       description: "The Techie in Me",
     },
     {
-      href: "/finance",
+      href: '/finance',
       title: "Finance Fanatic",
       description: "The Money Nerd in Me",
     },
     {
-      href: "/fitness",
+      href: '/fitness',
       title: "Fit Frenzy",
       description: "The Fitness Buff in Me",
     },

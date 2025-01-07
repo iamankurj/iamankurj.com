@@ -1,4 +1,4 @@
-import { socials } from './content'
+import { socials } from '@/content/shared/person'
 const baseURL = 'iamankurj.com'
 
 // default customization applied to the HTML in the main layout.tsx

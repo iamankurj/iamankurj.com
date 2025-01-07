@@ -17,15 +17,10 @@ export const MainSection = forwardRef<HTMLDivElement, MainSectionProps>(
   ({ children, ...rest }, ref) => {
     return (
       <Flex
-        position="relative"
-        as="section"
-        overflow="hidden"
         fillWidth
-        minHeight="0"
-        maxWidth={68}
-        direction="column"
-        alignItems="center"
         flex={1}
+        maxWidth="m"
+        direction="column"
         ref={ref}
         {...rest}
       >

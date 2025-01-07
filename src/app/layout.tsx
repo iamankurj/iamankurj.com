@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { headers } from "next/headers";
 import { Metadata } from "next";
 
-import { baseURL, style, meta, og, schema } from "@/resources/config"
+import { baseURL, style, meta, og, schema } from "@/config/config"
 
 import { Background, Flex } from '@/once-ui/components'
 
@@ -80,8 +80,9 @@ export default function RootLayout({
 }>) {
   return (
     <Flex
+      style={{ minHeight: "100vh" }}
       as="html" lang="en"
-      fillHeight background="page"
+      background="page"
       data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
       data-border={style.border} data-theme={style.theme}
       data-solid={style.solid} data-solid-style={style.solidStyle}
@@ -100,24 +101,16 @@ export default function RootLayout({
       </head>
       <Flex
         as="body"
-        fillWidth fillHeight margin="0" padding="0">
+        fillWidth margin="0" padding="0"
+        direction="column"
+        flex={1}>
         <Background
-          style={{ zIndex: '-1' }}
-          position="fixed"
           mask="cursor"
-          dots={{
-            display: true,
-            opacity: 0.4,
-            size: '20'
-          }}
-          gradient={{
-            display: true,
-            opacity: 0.5,
-          }} />
-        <Flex
-          flex={1} direction="column">
-          {children}
-        </Flex>
+          gradient={{ display: true, opacity: 0.4 }}
+          dots={{ display: true, opacity: 0.4, size: '24' }}
+          lines={{ display: false }}
+        />
+        {children}
       </Flex>
     </Flex>
   );

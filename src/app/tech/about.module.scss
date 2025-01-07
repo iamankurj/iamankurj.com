@@ -6,7 +6,6 @@
 
 @media (--s) {
   .avatar {
-
       top: auto;
   }
 
@@ -16,5 +15,6 @@
 
   .blockAlign {
       align-self: center;
+      justify-content: center;
   }
 }
