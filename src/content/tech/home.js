@@ -1,5 +1,5 @@
 import { baseURL } from "@/config/config";
-import { person } from "../shared/person";
+import { person, socials } from "../shared/person";
 import Link from "next/link";
 
 const role = 'Software engineer and consultant';
@@ -13,4 +13,13 @@ const home = {
     Curious about my non-techie side? Check out <Link href={"/"}>{baseURL}</Link>!</>
 }
 
-export { home };
+const techSocials = [
+  ...socials.filter(social => social.title === 'LinkedIn' || social.title === 'GitHub'),
+  {
+    title: 'Email',
+    href: 'mailto:tech.iamankurj@gmail.com',
+    icon: 'email'
+  }
+]
+
+export { home, techSocials };

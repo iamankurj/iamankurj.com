@@ -1,4 +1,3 @@
-
 const person = {
   firstName: 'Ankur',
   lastName: 'Jain',

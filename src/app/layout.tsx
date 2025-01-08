@@ -2,15 +2,14 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 
 import classNames from 'classnames';
-import { headers } from "next/headers";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 
-import { baseURL, style, meta, og, schema } from "@/config/config"
+import { baseURL, meta, og, schema, style } from "@/config/config";
 
-import { Background, Flex } from '@/once-ui/components'
+import { Background, Flex } from '@/once-ui/components';
 
-import { Inter } from 'next/font/google'
-import { Roboto_Mono } from 'next/font/google';
+import { Inter, Roboto_Mono } from 'next/font/google';
 
 const primary = Inter({
   variable: '--font-primary',
@@ -80,30 +79,29 @@ export default function RootLayout({
 }>) {
   return (
     <Flex
-      style={{ minHeight: "100vh" }}
       as="html" lang="en"
       background="page"
       data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
-      data-border={style.border} data-theme={style.theme}
       data-solid={style.solid} data-solid-style={style.solidStyle}
-      data-surface={style.surface} data-transition={style.transition}
-      data-scaling={style.scaling}
+      data-theme={style.theme}
+      data-border={style.border}
+      data-surface={style.surface}
+      data-transition={style.transition}
       className={classNames(
-        primary.variable, code.variable,
+        primary.variable,
         secondary ? secondary.variable : '',
-        tertiary ? tertiary.variable : ''
-      )}>
+        tertiary ? tertiary.variable : '',
+        code.variable,)}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       </head>
-      <Flex
-        as="body"
+      <Flex as="body"
+        style={{ minHeight: '100vh' }}
         fillWidth margin="0" padding="0"
-        direction="column"
-        flex={1}>
+        direction="column">
         <Background
           mask="cursor"
           gradient={{ display: true, opacity: 0.4 }}
