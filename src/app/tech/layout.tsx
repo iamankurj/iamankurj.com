@@ -1,6 +1,6 @@
 import { Footer } from '@/components/layout/Footer';
-import { Header } from '@/components/layout/Header/Header';
-import { PageLayout } from '@/components/layout/PageLayout';
+import { Header } from '@/components/layout/Header';
+import { techSocials } from '@/content/tech/home';
 import { Flex } from '@/once-ui/components';
 
 export default function TechLayout({
@@ -25,7 +25,8 @@ export default function TechLayout({
           {children}
         </Flex>
       </Flex>
-      <Footer />
+      <Footer socials={techSocials} />
+      <Flex height="80" show="s"></Flex>
     </>
   );
 }

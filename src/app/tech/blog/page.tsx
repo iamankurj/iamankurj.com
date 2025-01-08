@@ -1,7 +1,4 @@
-import { Footer } from '@/components/layout/Footer';
-import Header from '@/components/layout/Header/Header';
 import { MainSection } from '@/components/layout/MainSection';
-import { PageLayout } from '@/components/layout/PageLayout';
 import { Flex, GlitchFx, Heading, InlineCode, SmartImage } from '@/once-ui/components';
 
 export default function Blog() {

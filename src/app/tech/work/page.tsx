@@ -1,5 +1,5 @@
 import { MainSection } from '@/components/layout/MainSection';
-import TableOfContents from '@/components/TableOfContents/TableOfContents';
+import { TableOfContents } from '@/components/TableOfContents';
 import { person } from '@/content/shared/person';
 import { home } from '@/content/tech/home';
 import { resume, structure } from '@/content/tech/work';
@@ -45,7 +45,6 @@ export default function TechWork() {
     <>
       {!layoutWithAvatar && (
         <MainSection
-        // style={{ border: '1px dotted grey' }}
         >
           {resume.tldr.display && (
             <Accordion
@@ -80,7 +79,6 @@ export default function TechWork() {
               </Heading>
               {resume.work.experiences.map((experience, index) => (
                 <Accordion
-                  // open
                   key={`${experience.company}-${experience.startDate}`}
                   title={
                     <AccordionTitle
@@ -226,9 +224,7 @@ export default function TechWork() {
         </MainSection>
       )}
 
-      {layoutWithAvatar && (<MainSection
-      // style={{ border: '1px dotted grey' }}
-      >
+      {layoutWithAvatar && (<MainSection>
         {resume.tableOfContent.display && (
           <Flex
             style={{ left: '0', top: '50%', transform: 'translateY(-50%)' }}

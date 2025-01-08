@@ -18,7 +18,7 @@ interface TableOfContentsProps {
   };
 }
 
-const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
+export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
   const scrollTo = (id: string, offset: number) => {
     const element = document.getElementById(id);
     if (element) {
@@ -91,5 +91,3 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
     </Flex>
   );
 };
-
-export default TableOfContents;
