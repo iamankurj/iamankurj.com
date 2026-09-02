@@ -1,0 +1,20 @@
+---
+description: Workspace map and project intent for the site revamp
+alwaysApply: true
+---
+
+# Workspace
+
+This Cursor window is a three-root workspace. Only one root is the product.
+
+- **`iamankurj.com`** — working tree. New Next.js app being built from scratch. All edits go here.
+- **`references`** — design and layout inspiration only. Do not modify it as the app.
+- **`legacy`** — the current live site (`legacy/iamankurj.com`). Use it for content, IA, and behavior reference. Do not treat it as the app to ship.
+
+## Product
+
+Personal site revamp. UI uses **once-ui-system** (`@once-ui-system/core`). Prefer its components, tokens, and layout primitives over ad-hoc styling.
+
+## Next.js
+
+This is a current Next.js app. APIs and file conventions may differ from older training data. Before writing Next.js code, read the relevant guide in `node_modules/next/dist/docs/`. Do not edit the generated block in `AGENTS.md`; `next dev` owns it.
