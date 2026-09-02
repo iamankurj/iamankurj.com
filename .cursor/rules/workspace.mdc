@@ -18,3 +18,4 @@ Personal site revamp. UI uses **once-ui-system** (`@once-ui-system/core`). Prefe
 ## Next.js
 
 This is a current Next.js app. APIs and file conventions may differ from older training data. Before writing Next.js code, read the relevant guide in `node_modules/next/dist/docs/`. Do not edit the generated block in `AGENTS.md`; `next dev` owns it.
+Follow Next.js and Once UI best practices wherever applicable.
