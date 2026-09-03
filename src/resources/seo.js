@@ -1,17 +1,16 @@
-// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.once-ui.com";
+const baseURL = "https://iamankurj.com";
 
 // metadata for pages
 const meta = {
   home: {
     path: "/",
-    title: "Once UI for Next.js",
+    title: "Ankur Jain | Product Engineer, Builder & Singer at Heart",
     description:
-      "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
-    image: "/images/og/home.jpg",
-    canonical: "https://once-ui.com",
+      "Personal site of Ankur Jain. Product Engineer with 10+ years of experience, creator of CourseCorrect.fyi, founder of Gaayak.org, and writer on sustainable finance & fitness.",
+    image: "/images/og/me-by-the-river-og.jpg",
+    canonical: baseURL,
     robots: "index,follow",
-    alternates: [{ href: "https://once-ui.com", hrefLang: "en" }],
+    alternates: [{ href: baseURL, hrefLang: "en" }],
   },
   // add more routes and reference them in page.tsx
 };
@@ -19,10 +18,10 @@ const meta = {
 // default schema data
 const schema = {
   logo: "",
-  type: "Organization",
-  name: "Once UI",
+  type: "Personal",
+  name: "Ankur",
   description: meta.home.description,
-  email: "lorant@once-ui.com",
+  email: "tech.iamankurj@gmail.com",
 };
 
-export { meta, schema, baseURL };
+export { baseURL, meta, schema };
