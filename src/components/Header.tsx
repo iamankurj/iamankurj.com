@@ -13,23 +13,26 @@ function NavButton({
   prefixIcon,
   selected,
   external = false,
+  home = false,
 }: {
   href: string;
   label: string;
   prefixIcon: IconName;
   selected: boolean;
   external?: boolean;
+  home?: boolean;
 }) {
   const style = external
     ? { color: "var(--brand-on-background-medium)" }
-    : undefined;
+    : home ? { color: "var(--scheme-blue-600)" }
+      : undefined;
 
   return (
     <>
       <Row s={{ hide: true }}>
         <ToggleButton
           href={href}
-          label={label}
+          label={home ? "" : label}
           prefixIcon={prefixIcon}
           selected={selected}
           style={style}
@@ -101,6 +104,7 @@ export const Header = () => {
                 label={headerNav.home.label}
                 selected={isHeaderPathSelected(pathname, headerNav.home.href)}
                 prefixIcon={headerNav.home.prefixIcon}
+                home
               />
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {headerNav.primary.map((item) => (

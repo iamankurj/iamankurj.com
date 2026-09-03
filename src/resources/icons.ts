@@ -1,15 +1,15 @@
 import { IconType } from "react-icons";
 
 import {
-  HiHome,
   HiOutlineBriefcase,
   HiOutlineRocketLaunch
 } from "react-icons/hi2";
 import { PiMicrophoneStageDuotone } from "react-icons/pi";
+import { TbLetterA } from "react-icons/tb";
 
 export const iconLibrary: Record<string, IconType> = {
   rocket: HiOutlineRocketLaunch,
-  home: HiHome,
+  home: TbLetterA,
   briefcase: HiOutlineBriefcase,
   music: PiMicrophoneStageDuotone,
 };
