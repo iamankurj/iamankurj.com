@@ -19,7 +19,7 @@ export default function Home() {
         description={meta.home.description}
         path={meta.home.path}
       />
-      <Column maxWidth="s" horizontal="center" gap="l" align="center">
+      <Column maxWidth="s" horizontal="center" gap="s" align="center">
         <Badge
           textVariant="code-default-s"
           background="overlay"
@@ -37,16 +37,32 @@ export default function Home() {
             </Row>
           </Row>
         </Badge>
-        <Heading variant="display-strong-xl" marginTop="24">
-          Presence that doesn't beg for attention
+        <Heading variant="display-strong-l" marginTop="8">
+          Product Engineer, Builder, and Singer at Heart.
         </Heading>
         <Text
-          variant="heading-default-xl"
+          variant="body-default-l"
           onBackground="neutral-weak"
           wrap="balance"
-          marginBottom="16"
+          marginBottom="1"
         >
-          Build with clarity, speed, and quiet confidence
+          I’m a product engineer with over 10 years of experience. Today, I focus on building software that solves real-world problems.
+        </Text>
+        <Text
+          variant="body-default-l"
+          onBackground="neutral-weak"
+          wrap="balance"
+          marginBottom="1"
+        >
+          As a late-starter singer myself, I’m building Gaayak.org to help others on the same journey.
+        </Text>
+        <Text
+          variant="body-default-l"
+          onBackground="neutral-weak"
+          wrap="balance"
+          marginBottom="1"
+        >
+          Outside of tech, I plan to document my personal experiences with finance and fitness, sharing what's actually worked for me (and what hasn't) using a grounded, realistic approach.
         </Text>
         <Button
           id="docs"
