@@ -6,6 +6,6 @@ describe("seo", () => {
     expect(baseURL).toBe("https://iamankurj.com");
     expect(meta.home.path).toBe("/");
     expect(meta.home.canonical).toBe(baseURL);
-    expect(meta.home.image).toBe("/images/og/home.jpg");
+    expect(meta.home.image).toBe("/images/og/my-by-the-river-og.jpg");
   });
 });
