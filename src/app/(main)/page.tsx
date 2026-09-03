@@ -4,9 +4,7 @@ import {
   Button,
   Column,
   Heading,
-  LetterFx,
-  Line,
-  Logo,
+  Row,
   Schema,
   Text
 } from "@once-ui-system/core";
@@ -24,17 +22,20 @@ export default function Home() {
       <Column maxWidth="s" horizontal="center" gap="l" align="center">
         <Badge
           textVariant="code-default-s"
+          background="overlay"
           border="neutral-alpha-medium"
-          onBackground="neutral-medium"
+          onBackground="neutral-strong"
           vertical="center"
           gap="16"
         >
-          <Logo dark icon="/trademarks/wordmark-dark.svg" href="https://once-ui.com" size="xs" />
-          <Logo light icon="/trademarks/wordmark-light.svg" href="https://once-ui.com" size="xs" />
-          <Line vert background="neutral-alpha-strong" />
-          <Text marginX="4">
-            <LetterFx trigger="instant">An ecosystem, not a UI kit</LetterFx>
-          </Text>
+          <Row paddingY="2">
+            <Row gap="12" vertical="center">
+              <Text marginLeft="4">
+                Hi, I'm
+              </Text>
+              <strong className="mr-4" style={{ color: "var(--brand-on-background-medium)" }}>Ankur</strong>
+            </Row>
+          </Row>
         </Badge>
         <Heading variant="display-strong-xl" marginTop="24">
           Presence that doesn't beg for attention
