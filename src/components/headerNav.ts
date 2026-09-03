@@ -23,6 +23,17 @@ export const headerNav = {
   },
 } as const;
 
+export const heroCtas = [
+  {
+    href: headerNav.primary[1].href,
+    label: "Explore Projects",
+  },
+  {
+    href: headerNav.primary[0].href,
+    label: "View Experience",
+  },
+] as const;
+
 export function isHeaderPathSelected(pathname: string, href: string): boolean {
   if (href.startsWith("http://") || href.startsWith("https://")) {
     return false;
