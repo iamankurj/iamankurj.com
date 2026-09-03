@@ -27,9 +27,9 @@ Redesign [iamankurj.com](https://www.iamankurj.com/) to serve as a cohesive pers
 
 ```yaml
 Browser Tab Title: "Ankur Jain | Product Engineer, Builder & Singer at Heart"
-Meta Description: "Personal site of Ankur Jain. Product Engineer with 10+ years of experience building scalable tools, creator of CourseCorrect.fyi, and founder of Gaayak.org."
-OG Title: "Ankur Jain — Product Engineer & Builder"
-OG Description: "10+ years of engineering experience, vocal learning resources, and practical approaches to software, finance, and fitness."
+Meta Description: "Personal site of Ankur Jain. Product Engineer with 10+ years of experience, creator of CourseCorrect.fyi, founder of Gaayak.org, and writer on sustainable finance & fitness."
+OG Title: "Product Engineer, Builder & Singer at Heart"
+OG Description: "Personal site of Ankur Jain. Product Engineer with 10+ years of experience, creator of CourseCorrect.fyi, founder of Gaayak.org, and writer on sustainable finance & fitness."
 Favicon: "/favicon.ico"
 Language: "en"
 
@@ -57,7 +57,7 @@ Language: "en"
 * **Header:** Hi, I'm Ankur.
 * **Sub-headline:** Product Engineer, Builder, and Singer at Heart.
 * **Bio Copy:**
-> "I’m a product engineer with over 10 years of experience crafting systems that solve real-world problems. I focus on practical architecture, long-term stability, and delivering value without over-engineering. Outside of software, I’m building a resource for late-starter singers and applying a balanced, long-term approach to fitness and personal finance."
+> "I’m a product engineer with over 10 years of experience. Today, I focus on building software that solves real-world problems. As a late-starter singer myself, I’m building Gaayak.org to help others on the same journey. Outside of tech, I plan to document my personal experiences with finance and fitness, sharing what's actually worked for me (and what hasn't) using a grounded, realistic approach."
 
 
 * **Primary CTAs:**
