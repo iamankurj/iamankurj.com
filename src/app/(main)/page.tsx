@@ -1,19 +1,19 @@
+import { baseURL, meta } from "@/resources/seo";
 import {
-  Heading,
-  Text,
+  Badge,
   Button,
   Column,
-  Badge,
-  Logo,
-  Line,
+  Heading,
   LetterFx,
+  Line,
+  Logo,
+  Schema,
+  Text
 } from "@once-ui-system/core";
-import { Schema } from "@once-ui-system/core";
-import { baseURL, meta } from "@/resources/seo";
 
 export default function Home() {
   return (
-    <Column fillWidth minHeight="100vh" center padding="l">
+    <Column fillWidth flex={1} center padding="l">
       <Schema
         as="webPage"
         baseURL={baseURL}
