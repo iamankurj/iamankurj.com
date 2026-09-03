@@ -43,18 +43,20 @@ export default function Home() {
             Product Engineer, Builder, and Singer at Heart.
           </Heading>
         </Column>
-        <Row fillWidth gap="32" vertical="start" s={{ direction: "column", horizontal: "center" }}>
-          <Media
-            src="/images/me_by_the_river.jpg"
-            alt="Ankur sitting by a river"
-            aspectRatio="1/1"
-            radius="full"
-            sizes="256px"
-            maxWidth={16}
-            fillWidth={false}
-            priority
-          />
-          <Column flex={1} fillWidth gap="s" s={{ horizontal: "center", style: { textAlign: "center" } }}>
+        <Row fillWidth gap="32" s={{ direction: "column" }}>
+          <Column paddingLeft="48" flex={1} fillWidth center s={{ paddingLeft: 0 }}>
+            <Media
+              src="/images/me_by_the_river.jpg"
+              alt="Ankur sitting by a river"
+              aspectRatio="1/1"
+              radius="full"
+              sizes="256px"
+              maxWidth={16}
+              fillWidth={false}
+              priority
+            />
+          </Column>
+          <Column flex={2} fillWidth gap="s" s={{ horizontal: "center", style: { textAlign: "center" } }}>
             <Text
               variant="body-default-l"
               onBackground="neutral-weak"
