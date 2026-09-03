@@ -44,7 +44,12 @@ export default function Home() {
           </Heading>
         </Column>
         <Row fillWidth gap="32" s={{ direction: "column" }}>
-          <Column paddingLeft="48" flex={1} fillWidth center s={{ paddingLeft: 0 }}>
+          <Column
+            paddingLeft="48"
+            paddingTop="24"
+            flex={1}
+            fillWidth
+            s={{ paddingLeft: 0, horizontal: "center", vertical: "center" }}>
             <Media
               src="/images/me_by_the_river.jpg"
               alt="Ankur sitting by a river"
