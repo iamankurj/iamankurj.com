@@ -89,7 +89,9 @@ export default function RootLayout({
           <Row fillWidth minHeight="16" s={{ hide: true }} />
           <Header />
           <Column zIndex={0} fillWidth flex={1} horizontal="center" padding="l">
-            {children}
+            <Column fillWidth flex={1} horizontal="center" paddingY="12" paddingX="16">
+              {children}
+            </Column>
           </Column>
           <Footer />
         </Column>

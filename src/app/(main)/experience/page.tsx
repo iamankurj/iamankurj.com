@@ -67,7 +67,7 @@ export default function Experience() {
   const { tldr, work } = experienceContent;
 
   return (
-    <Column fillWidth horizontal="center" paddingY="12" paddingX="16">
+    <Column fillWidth horizontal="center">
       <Column maxWidth="s" gap="24" fillWidth>
         <Heading as="h1" variant="display-strong-xs">
           Experience
