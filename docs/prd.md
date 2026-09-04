@@ -6,9 +6,9 @@
 
 Redesign [iamankurj.com](https://www.iamankurj.com/) to serve as a cohesive personal brand hub. The site must balance a high-rigor technical portfolio with personal passions (vocal training, finance, fitness), presenting a warm, authentic, and grounded narrative without relying on superficial hype or "buzzwords."
 
-### Architectural Decision: Single-Domain Sub-paths (`/tech/work`, `/tech/hustle`)
+### Architectural Decision: Single-Domain Sub-paths (`/experience`, `/fitness`)
 
-* **Decision:** Use single-domain sub-paths (`[iamankurj.com/tech/](https://iamankurj.com/tech/)...`) rather than separate subdomains (`tech.iamankurj.com`).
+* **Decision:** Use single-domain sub-paths (`[iamankurj.com/tech/](https://iamankurj.com/experience/)...`) rather than separate subdomains (`experience.iamankurj.com`).
 * **Rationale:** Maximizes root-domain SEO authority, maintains cross-site analytics simplicity, and offers a unified, polished user experience without redirecting users off-site.
 
 ### Design & Tone Rationale
@@ -45,10 +45,11 @@ Language: "en"
 
 * **Logo/Brand:** Ankur Jain
 * **Header Links:**
-* `Engineering` (`/tech/work`)
-* `Projects` (`/tech/hustle`)
+* `Experience` (`/experience`)
+* `Projects` (`/projects`)
+* `Fitness` (`/fitness`)
+* `Finance` (`/finance`)
 * `Gaayak` (`[https://gaayak.org](https://gaayak.org)` - External)
-* `Writing` (`/writing`)
 
 
 
@@ -100,7 +101,7 @@ Language: "en"
 #### Section 3: Footer
 
 * **Copyright:** `© 2026 Ankur Jain. Built with Next.js & Once UI.`
-* **Social Links:** LinkedIn, GitHub, X (Twitter), YouTube.
+* **Social Links:** LinkedIn, Instagram, Github, YouTube.
 
 ---
 

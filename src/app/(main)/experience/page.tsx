@@ -6,6 +6,7 @@ import {
   Text,
 } from "@once-ui-system/core";
 
+import { ExperienceTestimonials } from "@/components/ExperienceTestimonials";
 import {
   experienceContent,
   type ExperienceLine,
@@ -72,6 +73,8 @@ export default function Experience() {
         <Accordion title={tldr.title} open>
           <ExperienceLines items={[...tldr.items]} variant="body-default-s" />
         </Accordion>
+
+        <ExperienceTestimonials />
 
         <Heading as="h2" variant="heading-strong-m" marginTop="16">
           {work.title}

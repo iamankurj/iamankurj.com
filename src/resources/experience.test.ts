@@ -4,6 +4,8 @@ import {
   experienceAccordionTitle,
   experienceContent,
   experienceLinePlainText,
+  testimonialAttribution,
+  testimonialQuoteVariant,
 } from "../resources/experience";
 
 describe("experienceContent", () => {
@@ -11,7 +13,7 @@ describe("experienceContent", () => {
     expect(experienceContent.tldr.title).toBe("TL;DR");
     expect(experienceContent.tldr.items).toHaveLength(5);
     expect(experienceLinePlainText(experienceContent.tldr.items[0])).toContain(
-      "9+ years of experience",
+      "10+ years of experience",
     );
     expect(experienceLinePlainText(experienceContent.tldr.items[1])).toContain(
       "900 million users",
@@ -31,7 +33,7 @@ describe("experienceContent", () => {
       "Credit Suisse",
       "Built.io (Raw Eng.)",
     ]);
-    expect(experienceContent.work.experiences[0].endDate).toBe("Present");
+    expect(experienceContent.work.experiences[0].endDate).toBe("Dec 2025");
     expect(experienceContent.work.experiences.at(-1)?.role).toContain("Intern");
   });
 
@@ -42,6 +44,53 @@ describe("experienceContent", () => {
     expect(experienceLinePlainText(lead!)).toContain("Engineering Lead");
     expect(lead!.subItems).toHaveLength(2);
     expect(experienceLinePlainText(lead!.subItems![0])).toContain("Flow Visualizer");
+  });
+
+  it("includes the legacy testimonials for the carousel", () => {
+    expect(experienceContent.testimonials.title).toBe("Testimonials");
+    expect(experienceContent.testimonials.items).toHaveLength(7);
+    expect(experienceContent.testimonials.items[0].quote).toContain(
+      "brightest minds",
+    );
+    expect(experienceContent.testimonials.items[0].author).toEqual({
+      name: "",
+      linkedInHref: "",
+    });
+    expect(experienceContent.testimonials.slideMinHeight).toBeGreaterThan(0);
+    expect(experienceContent.testimonials.linkedInHref).toContain("linkedin.com");
+  });
+});
+
+describe("testimonialAttribution", () => {
+  it("omits author and link when placeholders are blank", () => {
+    expect(testimonialAttribution({ name: "", linkedInHref: "" })).toEqual({});
+    expect(testimonialAttribution(undefined)).toEqual({});
+  });
+
+  it("passes BlockQuote author and LinkedIn link when filled", () => {
+    expect(
+      testimonialAttribution({
+        name: "Alex",
+        linkedInHref: "https://www.linkedin.com/in/alex/",
+      }),
+    ).toEqual({
+      author: { name: "Alex" },
+      link: {
+        href: "https://www.linkedin.com/in/alex/",
+        label: "LinkedIn",
+      },
+    });
+  });
+});
+
+describe("testimonialQuoteVariant", () => {
+  it("keeps strong heading for typical quote lengths", () => {
+    expect(testimonialQuoteVariant("Short quote")).toBe("heading-strong-s");
+  });
+
+  it("drops to body when a quote would overflow the fixed slide", () => {
+    const longQuote = "a".repeat(141);
+    expect(testimonialQuoteVariant(longQuote)).toBe("body-default-m");
   });
 });
 
