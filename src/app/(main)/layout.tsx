@@ -73,7 +73,8 @@ export default function RootLayout({
           fillWidth
           minHeight="100vh"
           margin="0"
-          padding="0">
+          padding="0"
+        >
           <Column fillWidth maxHeight="100dvh" aspectRatio="1" horizontal="center" position="absolute" top="0" left="0">
             <Mask maxWidth="m" x={50} y={0} radius={50}>
               <MatrixFx
@@ -87,7 +88,13 @@ export default function RootLayout({
           </Column>
           <Row fillWidth minHeight="16" s={{ hide: true }} />
           <Header />
-          <Column zIndex={0} fillWidth flex={1} horizontal="center">
+          <Column
+            zIndex={0}
+            fillWidth
+            flex={1}
+            horizontal="center"
+            s={{ style: { padding: "var(--responsive-space-l)" } }}
+          >
             {children}
           </Column>
           <Footer />
