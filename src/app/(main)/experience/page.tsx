@@ -69,10 +69,6 @@ export default function Experience() {
   return (
     <Column fillWidth horizontal="center">
       <Column maxWidth="s" gap="24" fillWidth>
-        <Heading as="h1" variant="display-strong-xs">
-          Experience
-        </Heading>
-
         <Accordion title={tldr.title} open>
           <ExperienceLines items={[...tldr.items]} variant="body-default-s" />
         </Accordion>
