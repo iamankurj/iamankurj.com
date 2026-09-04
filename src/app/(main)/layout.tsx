@@ -67,7 +67,13 @@ export default function RootLayout({
         />
       </head>
       <Providers>
-        <Column as="body" background="page" fillWidth minHeight="100vh" margin="0" padding="0">
+        <Column
+          as="body"
+          background="page"
+          fillWidth
+          minHeight="100vh"
+          margin="0"
+          padding="0">
           <Column fillWidth maxHeight="100dvh" aspectRatio="1" horizontal="center" position="absolute" top="0" left="0">
             <Mask maxWidth="m" x={50} y={0} radius={50}>
               <MatrixFx
