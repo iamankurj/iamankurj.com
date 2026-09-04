@@ -23,7 +23,7 @@ export default function Home() {
         description={meta.home.description}
         path={meta.home.path}
       />
-      <Column maxWidth="s" gap="40">
+      <Column maxWidth="s" gap="40" s={{ gap: 2 }}>
         <Column gap="s" align="center" horizontal="center">
           <Badge
             textVariant="code-default-s"
@@ -57,7 +57,7 @@ export default function Home() {
               paddingTop="24"
               flex={1}
               fillWidth
-              s={{ paddingLeft: 0, horizontal: "center", vertical: "center" }}>
+              s={{ paddingLeft: 0, paddingTop: 0, horizontal: "center", vertical: "center" }}>
               <Media
                 src="/images/me_by_the_river.jpg"
                 alt="Ankur sitting by a river"
@@ -98,7 +98,7 @@ export default function Home() {
               >
                 Outside of tech, I plan to document my personal experiences with finance and fitness, sharing what's actually worked for me (and what hasn't) using a grounded, realistic approach.
               </Text>
-              <Row gap="12" wrap s={{ direction: "column", horizontal: "center" }}>
+              <Row gap="12" wrap s={{ direction: "column", horizontal: "center", marginTop: 1.5 }}>
                 <Button id="projects" href={heroCtas[0].href} data-border="rounded">
                   {heroCtas[0].label}
                 </Button>
