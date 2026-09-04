@@ -1,14 +1,15 @@
+import '@/resources/custom.css';
 import '@once-ui-system/core/css/styles.css';
 import '@once-ui-system/core/css/tokens.css';
-import '@/resources/custom.css'
 
 import classNames from "classnames";
 
-import { baseURL, meta } from "@/resources/seo";
-import { fonts, style, dataStyle } from "@/resources/once-ui.config";
-import { Meta, Schema,  Column, Flex, Row, Mask, MatrixFx, ThemeInit} from "@once-ui-system/core";
-import { Providers } from '@/components/Providers';
+import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import { Providers } from '@/components/Providers';
+import { dataStyle, fonts, style } from "@/resources/once-ui.config";
+import { baseURL, meta } from "@/resources/seo";
+import { Column, Flex, Mask, MatrixFx, Meta, Row, Schema, ThemeInit } from "@once-ui-system/core";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -83,6 +84,7 @@ export default function RootLayout({
           <Column zIndex={0} fillWidth flex={1} horizontal="center">
             {children}
           </Column>
+          <Footer />
         </Column>
       </Providers>
     </Flex>
