@@ -17,9 +17,40 @@ export type WorkExperience = {
   items?: ExperienceLine[];
 };
 
+export type TestimonialAuthor = {
+  name?: string;
+  linkedInHref?: string;
+};
+
+export type TestimonialItem = {
+  quote: string;
+  author?: TestimonialAuthor;
+};
+
+/** Props for BlockQuote author/link; omits empty placeholders so nothing renders. */
+export function testimonialAttribution(author?: TestimonialAuthor): {
+  author?: { name: string };
+  link?: { href: string; label: string };
+} {
+  const name = author?.name?.trim();
+  const href = author?.linkedInHref?.trim();
+
+  return {
+    ...(name ? { author: { name } } : {}),
+    ...(href ? { link: { href, label: "LinkedIn" } } : {}),
+  };
+}
+
+/** Prefer strong heading; drop to body when a quote would overflow the fixed slide. */
+export function testimonialQuoteVariant(
+  quote: string,
+): "heading-strong-s" | "body-default-m" {
+  return quote.length > 140 ? "body-default-m" : "heading-strong-s";
+}
+
 export const experienceContent = {
   tldr: {
-    title: "TL;DR",
+    title: "Summary",
     items: [
       {
         segments: [
@@ -307,6 +338,46 @@ export const experienceContent = {
         endDate: "Jun '15",
       },
     ] satisfies WorkExperience[],
+  },
+  testimonials: {
+    title: "Testimonials",
+    linkedInHref: "https://www.linkedin.com/in/iamankurj/",
+    /** Fixed slide height (rem) so autoplay doesn’t jump between quote lengths. */
+    slideMinHeight: 18,
+    items: [
+      {
+        quote:
+          "One of the brightest minds and one of the best engineers I worked with",
+        author: { name: "", linkedInHref: "" },
+      },
+      {
+        quote:
+          "His tenacity, problem solving, technical abilities and commitment make him an invaluable team player",
+        author: { name: "", linkedInHref: "" },
+      },
+      {
+        quote: 'Never lacked dedication and always had "go-to" attitude',
+        author: { name: "", linkedInHref: "" },
+      },
+      {
+        quote:
+          "Energetic, full of new ideas, and stakeholders appreciated working with him",
+        author: { name: "", linkedInHref: "" },
+      },
+      {
+        quote: "Delivered on multiple projects with great efficiency",
+        author: { name: "", linkedInHref: "" },
+      },
+      {
+        quote: "Exceeded expectations on many occasions",
+        author: { name: "", linkedInHref: "" },
+      },
+      {
+        quote:
+          "Very proactive person who makes sure the job gets done and is always ready to share ideas openly and discuss through",
+        author: { name: "", linkedInHref: "" },
+      },
+    ] satisfies TestimonialItem[],
   },
 } as const;
 
