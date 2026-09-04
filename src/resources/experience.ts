@@ -24,7 +24,7 @@ export const experienceContent = {
       {
         segments: [
           {
-            text: "9+ years of experience in the software industry, demonstrating strong problem-solving, technical, and interpersonal skills",
+            text: "10+ years of experience in the software industry, demonstrating strong problem-solving, technical, and interpersonal skills",
           },
         ],
       },
@@ -64,7 +64,7 @@ export const experienceContent = {
         role: "Senior Software Engineering Consultant",
         location: "Canada",
         startDate: "Apr '23",
-        endDate: "Present",
+        endDate: "Dec 2025",
         items: [
           {
             segments: [{ text: "Engineering Lead", strong: true }, { text: " for" }],
