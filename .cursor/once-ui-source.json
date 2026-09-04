@@ -1,0 +1,7 @@
+{
+  "package": "@once-ui-system/core",
+  "version": "1.8.4",
+  "copiedFrom": "node_modules/@once-ui-system/core/ai",
+  "dest": ".cursor/once-ui-ai",
+  "refresh": "rsync -a --delete node_modules/@once-ui-system/core/ai/ .cursor/once-ui-ai/"
+}

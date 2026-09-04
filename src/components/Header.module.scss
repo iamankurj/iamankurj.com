@@ -1,0 +1,8 @@
+.position {
+  top: 0;
+
+  @media (max-width: 768px) {
+    top: auto;
+    bottom: var(--static-space-24);
+  }
+}
