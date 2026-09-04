@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import { FaGithub, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa6";
 
 import {
   HiOutlineBriefcase,
@@ -12,6 +13,10 @@ export const iconLibrary: Record<string, IconType> = {
   home: TbLetterA,
   briefcase: HiOutlineBriefcase,
   music: PiMicrophoneStageDuotone,
+  linkedin: FaLinkedin,
+  instagram: FaInstagram,
+  github: FaGithub,
+  youtube: FaYoutube,
 };
 
 export type IconLibrary = typeof iconLibrary;
