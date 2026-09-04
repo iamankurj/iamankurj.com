@@ -15,7 +15,7 @@ import {
 
 export default function Home() {
   return (
-    <Column fillWidth horizontal="center" padding="l">
+    <Column fillWidth horizontal="center" paddingY="12">
       <Schema
         as="webPage"
         baseURL={baseURL}
