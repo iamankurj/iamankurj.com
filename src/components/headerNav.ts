@@ -6,12 +6,12 @@ export const headerNav = {
   },
   primary: [
     {
-      href: "/experience",
+      href: "/tech/experience",
       label: "Experience",
       prefixIcon: "briefcase",
     },
     {
-      href: "/projects",
+      href: "/tech/projects",
       label: "Projects",
       prefixIcon: "rocket",
     },
@@ -39,5 +39,10 @@ export function isHeaderPathSelected(pathname: string, href: string): boolean {
     return false;
   }
 
-  return pathname === href;
+  // Home must match exactly so it does not stay selected on every page.
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
