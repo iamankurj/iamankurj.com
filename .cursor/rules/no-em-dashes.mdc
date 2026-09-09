@@ -1,0 +1,10 @@
+---
+description: Prefer plain punctuation; almost never use em dashes
+alwaysApply: true
+---
+
+# Writing style
+
+- Almost never use em dashes (`—`) in prose, UI copy, markdown content, comments, or commit/PR text.
+- Prefer commas, periods, colons, parentheses, or a simple hyphen (`-`) when a break is needed.
+- Same preference for en dashes (`–`) used as sentence breaks; use them only for numeric/date ranges if needed.
