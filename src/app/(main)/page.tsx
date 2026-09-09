@@ -44,13 +44,13 @@ export default function Home() {
               </Row>
             </Row>
           </Badge>
-          <RevealFx delay={0.2}>
+          <RevealFx delay={0.1}>
             <Heading variant="display-strong-l" marginTop="8">
               Product Engineer, Builder, and Singer at Heart.
             </Heading>
           </RevealFx>
         </Column>
-        <RevealFx delay={0.4}>
+        <RevealFx delay={0.2}>
           <Row fillWidth gap="32" s={{ direction: "column" }}>
             <Column
               paddingLeft="48"
