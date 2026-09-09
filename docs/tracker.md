@@ -1,5 +1,8 @@
 # To Do
-- [ ] Change the background of the Experience page
+- [ ] Reduce the delay between site-open and text fade in
+- [ ] Change the background of the tech pages
+- [ ] Add Github Repo link for iamankurj.com project
+- [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
 - [ ] Consider adding the name, company and LinkedIn link of the author in testimonials
 - [ ] Change the component used for Summary on Experience page
 - [ ] Should we add the location and local time (similar to magic portfolio)

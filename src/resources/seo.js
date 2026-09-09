@@ -12,7 +12,14 @@ const meta = {
     robots: "index,follow",
     alternates: [{ href: baseURL, hrefLang: "en" }],
   },
-  // add more routes and reference them in page.tsx
+  projects: {
+    path: "/tech/projects",
+    title: "Projects | Ankur Jain",
+    description:
+      "Product experiments and case studies by Ankur Jain — architecture, stack choices, and engineering trade-offs.",
+    image: "/images/og/me-by-the-river-og.jpg",
+    robots: "index,follow",
+  },
 };
 
 // default schema data
