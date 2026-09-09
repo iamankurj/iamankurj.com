@@ -9,7 +9,7 @@ import { Header } from '@/components/Header';
 import { Providers } from '@/components/Providers';
 import { dataStyle, fonts, style } from "@/resources/once-ui.config";
 import { baseURL, meta } from "@/resources/seo";
-import { Column, Flex, Mask, MatrixFx, Meta, Row, Schema, ThemeInit } from "@once-ui-system/core";
+import { Column, Flex, Meta, Row, Schema, ThemeInit } from "@once-ui-system/core";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -75,17 +75,6 @@ export default function RootLayout({
           margin="0"
           padding="0"
         >
-          <Column fillWidth maxHeight="100dvh" aspectRatio="1" horizontal="center" position="absolute" top="0" left="0">
-            <Mask maxWidth="m" x={50} y={0} radius={50}>
-              <MatrixFx
-                size={1.5}
-                spacing={5}
-                fps={24}
-                colors={["brand-solid-strong"]}
-                flicker
-              />
-            </Mask>
-          </Column>
           <Row fillWidth minHeight="16" s={{ hide: true }} />
           <Header />
           <Column zIndex={0} fillWidth flex={1} horizontal="center" padding="l">

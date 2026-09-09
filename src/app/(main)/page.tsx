@@ -1,3 +1,4 @@
+import { SectionAtmosphere } from "@/components/SectionAtmosphere";
 import { heroCtas } from "@/components/headerNav";
 import { baseURL, meta } from "@/resources/seo";
 import {
@@ -5,6 +6,8 @@ import {
   Button,
   Column,
   Heading,
+  Mask,
+  MatrixFx,
   Media,
   RevealFx,
   Row,
@@ -16,6 +19,17 @@ import {
 export default function Home() {
   return (
     <Column fillWidth horizontal="center">
+      <SectionAtmosphere maxHeight="100dvh" aspectRatio="1">
+        <Mask maxWidth="m" x={50} y={0} radius={50}>
+          <MatrixFx
+            size={1.5}
+            spacing={7}
+            fps={24}
+            colors={["brand-solid-strong"]}
+            flicker
+          />
+        </Mask>
+      </SectionAtmosphere>
       <Schema
         as="webPage"
         baseURL={baseURL}

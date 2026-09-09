@@ -1,7 +1,9 @@
 # To Do
 - [ ] Reduce the delay between site-open and text fade in
-- [ ] Change the background of the tech pages
-- [ ] Add Github Repo link for iamankurj.com project
+  - [x] Reduced delay, making it slightly better. The rest is post-hydration start (`RevealFx` is client + `useEffect`), harder to fix for now
+- [x] Change the background of the tech pages
+- [x] Add Github Repo link for iamankurj.com project
+- [ ] Add [CourseCorrect](https://coursecorrect.fyi/)
 - [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
 - [ ] Consider adding the name, company and LinkedIn link of the author in testimonials
 - [ ] Change the component used for Summary on Experience page
