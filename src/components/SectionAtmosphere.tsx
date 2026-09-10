@@ -1,34 +1,57 @@
 import { Column } from "@once-ui-system/core";
 import type { ComponentProps, ReactNode } from "react";
 
+type ColumnProps = ComponentProps<typeof Column>;
+
 type SectionAtmosphereProps = {
   children?: ReactNode;
+  /**
+   * Full-viewport base colour for this section (home, /tech, …).
+   * Independent of the shared body `background="page"` fallback.
+   */
+  background?: ColumnProps["background"];
 } & Omit<
-  ComponentProps<typeof Column>,
-  "children" | "position" | "top" | "left" | "pointerEvents"
+  ColumnProps,
+  "children" | "position" | "top" | "left" | "pointerEvents" | "background"
 >;
 
 /**
- * Viewport-fixed decorative layer for a first-level section (home, /tech, …).
- * Keep aesthetics in the section layout/page; this only pins the shell.
+ * Viewport-fixed atmosphere for a first-level section.
+ * - `background`: full-page colour for this section only
+ * - other props + children: decorative effect shell (Mask, MatrixFx, …)
  */
 export function SectionAtmosphere({
   children,
+  background,
   style,
   ...rest
 }: SectionAtmosphereProps) {
   return (
-    <Column
-      fillWidth
-      horizontal="center"
-      {...rest}
-      position="fixed"
-      top="0"
-      left="0"
-      pointerEvents="none"
-      style={style}
-    >
-      {children}
-    </Column>
+    <>
+      {background != null ? (
+        <Column
+          position="fixed"
+          top="0"
+          left="0"
+          fillWidth
+          height="100vh"
+          background={background}
+          pointerEvents="none"
+          aria-hidden
+        />
+      ) : null}
+      <Column
+        fillWidth
+        horizontal="center"
+        {...rest}
+        position="fixed"
+        top="0"
+        left="0"
+        pointerEvents="none"
+        style={style}
+      >
+        {children}
+      </Column>
+    </>
   );
 }

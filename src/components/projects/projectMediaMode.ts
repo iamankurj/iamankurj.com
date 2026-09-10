@@ -12,4 +12,5 @@ export function projectMediaMode(imageCount: number): ProjectMediaMode {
 }
 
 export const PROJECT_MEDIA_ASPECT_RATIO = "16 / 9";
-export const PROJECT_MEDIA_SIZES = "(max-width: 960px) 100vw, 720px";
+/** Matches ~maxWidth "m" project frames on desktop; 100vw below 960px. */
+export const PROJECT_MEDIA_SIZES = "(max-width: 960px) 100vw, 1200px";

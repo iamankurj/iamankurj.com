@@ -21,22 +21,21 @@ describe("getCollection", () => {
     ).toEqual([]);
   });
 
-  it("loads projects sorted by publishedAt descending", () => {
+  it("loads projects sorted by order ascending, then publishedAt", () => {
     const entries = getCollection("projects", {
       cwd: fixturesCwd,
       includeDrafts: true,
     });
 
     expect(entries.map((entry) => entry.slug)).toEqual([
-      "draft-only",
       "beta",
       "alpha",
+      "draft-only",
     ]);
-    expect(entries[1]?.metadata.title).toBe("Beta Project");
-    expect(entries[1]?.metadata.images).toEqual([
-      "/images/projects/beta/cover.jpg",
-    ]);
-    expect(entries[2]?.body).toContain("Body for alpha.");
+    expect(entries[0]?.metadata.order).toBe(1);
+    expect(entries[1]?.metadata.title).toBe("Alpha Project");
+    expect(entries[1]?.metadata.images).toEqual([]);
+    expect(entries[2]?.body).toContain("Draft body.");
   });
 
   it("omits drafts by default in production", () => {

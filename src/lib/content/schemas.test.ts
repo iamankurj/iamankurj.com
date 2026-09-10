@@ -15,24 +15,36 @@ describe("projectFrontmatterSchema", () => {
       title: valid.title,
       summary: valid.summary,
       publishedAt: valid.publishedAt,
+      order: Number.MAX_SAFE_INTEGER,
       images: [],
       draft: false,
     });
   });
 
-  it("accepts optional images, link, and draft", () => {
+  it("accepts optional images, link, draft, and order", () => {
     const parsed = parseProjectFrontmatter({
       ...valid,
+      order: 1,
       images: ["/images/projects/coursecorrect/cover.jpg"],
       link: "https://coursecorrect.fyi",
       draft: true,
     });
 
+    expect(parsed.order).toBe(1);
     expect(parsed.images).toEqual([
       "/images/projects/coursecorrect/cover.jpg",
     ]);
     expect(parsed.link).toBe("https://coursecorrect.fyi");
     expect(parsed.draft).toBe(true);
+  });
+
+  it("rejects non-positive order values", () => {
+    expect(() =>
+      parseProjectFrontmatter({ ...valid, order: 0 }),
+    ).toThrow();
+    expect(() =>
+      parseProjectFrontmatter({ ...valid, order: -1 }),
+    ).toThrow();
   });
 
   it("treats empty link as undefined", () => {

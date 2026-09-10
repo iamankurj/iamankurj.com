@@ -1,3 +1,5 @@
+import { stripHtmlComments } from "./stripHtmlComments";
+
 /**
  * Site markdown link contract:
  * - On-site: root-relative pathnames only (`/tech/projects/slug`, `/tech/experience`, …)
@@ -26,7 +28,7 @@ export function stripMarkdownCode(body: string): string {
 }
 
 export function extractMarkdownHrefs(body: string): string[] {
-  const text = stripMarkdownCode(body);
+  const text = stripHtmlComments(stripMarkdownCode(body));
   const hrefs: string[] = [];
   for (const match of text.matchAll(MARKDOWN_LINK_RE)) {
     const href = match[1];

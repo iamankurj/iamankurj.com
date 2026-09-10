@@ -1,8 +1,8 @@
 /** @vitest-environment jsdom */
 import "@testing-library/jest-dom/vitest";
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import type { ReactNode } from "react";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("@once-ui-system/core", () => ({
   Text: ({ children }: { children?: ReactNode }) => (
@@ -57,6 +57,10 @@ vi.mock("@once-ui-system/core", () => ({
 
 import { MarkdownBody } from "./MarkdownBody";
 
+afterEach(() => {
+  cleanup();
+});
+
 describe("MarkdownBody", () => {
   it("maps headings, paragraphs, links, and GFM tables to Once UI stand-ins", () => {
     render(
@@ -88,5 +92,23 @@ Hello **world** with an [internal](/tech/projects) and [external](https://exampl
 
     expect(screen.getByRole("table")).toBeTruthy();
     expect(screen.getByText("Next.js")).toBeTruthy();
+  });
+
+  it("does not render HTML comments", () => {
+    render(
+      <MarkdownBody
+        body={`<!-- author note: keep draft until images exist -->
+
+## Overview
+
+Visible prose.
+`}
+      />,
+    );
+
+    expect(screen.queryByText(/author note/i)).toBeNull();
+    expect(screen.queryByText(/keep draft/i)).toBeNull();
+    expect(screen.getByTestId("once-heading")).toHaveTextContent("Overview");
+    expect(screen.getByText("Visible prose.")).toBeTruthy();
   });
 });

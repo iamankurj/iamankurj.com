@@ -44,6 +44,7 @@ export function ProjectMedia({
         radius="m"
         border="neutral-alpha-medium"
         sizes={sizes}
+        unoptimized
       />
     );
   }
@@ -56,6 +57,7 @@ export function ProjectMedia({
       sizes={sizes}
       indicator="line"
       controls
+      unoptimized
       items={images.map((slide) => ({
         slide,
         alt,

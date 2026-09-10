@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <Column maxWidth="m" gap="32" fillWidth>
         <Column gap="12" fillWidth>
-          <SmartLink href={PROJECTS_BASE_PATH}>
+          <SmartLink href={PROJECTS_BASE_PATH} prefixIcon="chevronLeft">
             <Text variant="label-strong-m">{projectsPageContent.title}</Text>
           </SmartLink>
 
