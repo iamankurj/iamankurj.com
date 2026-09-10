@@ -7,6 +7,7 @@
 - [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
 - [ ] Consider adding the name, company and LinkedIn link of the author in testimonials
 - [ ] Change the component used for Summary on Experience page
+- [ ] Consider adding breadcrumb navigation for projects (since they're not part of the header)?
 - [ ] Should we add the location and local time (similar to magic portfolio)
 - [ ] Should we add the languages I speak (similar to magic portfolio)
 - [ ] Is it possible to have a custom icon ("a" logo) as a prefixIcon for the Home button?

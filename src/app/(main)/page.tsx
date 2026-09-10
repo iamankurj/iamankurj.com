@@ -19,7 +19,7 @@ import {
 export default function Home() {
   return (
     <Column fillWidth horizontal="center">
-      <SectionAtmosphere maxHeight="100dvh" aspectRatio="1">
+      <SectionAtmosphere background="page" maxHeight="100dvh" aspectRatio="1">
         <Mask maxWidth="m" x={50} y={0} radius={50}>
           <MatrixFx
             size={1.5}

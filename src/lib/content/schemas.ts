@@ -7,8 +7,13 @@ import { z } from "zod";
 export const projectFrontmatterSchema = z.object({
   title: z.string().min(1),
   summary: z.string().min(1),
-  /** Calendar date as YYYY-MM-DD (sort + optional display). */
+  /** Calendar date as YYYY-MM-DD (display + tiebreaker after `order`). */
   publishedAt: z.iso.date(),
+  /**
+   * Manual list position (ascending). Lower appears first.
+   * Omit to fall back after explicitly ordered projects (then by publishedAt).
+   */
+  order: z.number().int().positive().default(Number.MAX_SAFE_INTEGER),
   /** Public paths or URLs for card/hero images. */
   images: z.array(z.string().min(1)).default([]),
   /** Optional live product URL; empty string from YAML is treated as absent. */

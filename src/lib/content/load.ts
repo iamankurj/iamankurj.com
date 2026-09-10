@@ -90,11 +90,17 @@ function readMarkdownEntry(
   }
 }
 
-function byPublishedAtDesc(a: ProjectEntry, b: ProjectEntry): number {
+function byProjectListOrder(a: ProjectEntry, b: ProjectEntry): number {
+  const byOrder = a.metadata.order - b.metadata.order;
+  if (byOrder !== 0) {
+    return byOrder;
+  }
+
   const byDate = b.metadata.publishedAt.localeCompare(a.metadata.publishedAt);
   if (byDate !== 0) {
     return byDate;
   }
+
   return a.slug.localeCompare(b.slug);
 }
 
@@ -113,7 +119,7 @@ export function getCollection(
   return listMarkdownFiles(dir)
     .map((file) => readMarkdownEntry(collection, path.join(dir, file)))
     .filter((entry) => allowDrafts || !entry.metadata.draft)
-    .sort(byPublishedAtDesc);
+    .sort(byProjectListOrder);
 }
 
 /**

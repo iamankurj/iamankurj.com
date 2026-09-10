@@ -2,6 +2,7 @@
 title: "iamankurj.com: Personal Site Revamp"
 summary: "A Next.js personal brand site with a portable markdown content pipeline, typed frontmatter, and a /tech information architecture built to scale without a CMS."
 publishedAt: "2026-09-09"
+order: 2
 images:
   - "/images/projects/iamankurj-com/cover-01-home.jpg"
   - "/images/projects/iamankurj-com/cover-02-experience.jpg"
@@ -78,7 +79,7 @@ Skipped on purpose: a headless CMS, MDX-in-content, and a separate design-system
 ## Key Features
 
 - **File → page pipeline:** Add `content/projects/<slug>.md` → list card + `/tech/projects/<slug>` after build (see [Projects](/tech/projects)).
-- **Typed frontmatter:** `title`, `summary`, `publishedAt`, `images`, `link`, and `draft` validated before a page can render.
+- **Typed frontmatter:** `title`, `summary`, `publishedAt`, `order`, `images`, `link`, and `draft` validated before a page can render.
 - **Case study chrome + body split:** Metadata drives cards, SEO, and CTAs; Markdown owns narrative depth.
 - **Multi-image carousel:** One image renders as a single frame; two or more use a carousel on list and detail.
 - **Safe linking rules:** Root-relative on-site paths; absolute `https://` / `mailto:` off-site; reject filesystem-style `.md` links at load.

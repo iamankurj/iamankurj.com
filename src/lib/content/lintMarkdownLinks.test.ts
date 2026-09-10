@@ -46,6 +46,15 @@ See [Projects](/tech/projects) and [live](https://example.com).
     ]);
   });
 
+  it("ignores links that appear only inside HTML comments", () => {
+    const body = `
+<!-- see [bad](./draft.md) later -->
+
+Go [home](/).
+`;
+    expect(extractMarkdownHrefs(body)).toEqual(["/"]);
+  });
+
   it("stripMarkdownCode removes fences", () => {
     expect(stripMarkdownCode("a\n```\nx\n```\nb")).toBe("a\n\nb");
   });

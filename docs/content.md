@@ -10,6 +10,16 @@ Markdown collections live under `content/<collection>/` (not under `app/`).
 
 Validated by Zod in `src/lib/content/schemas.ts`. Unknown keys are ignored by Zod object parsing unless you extend the schema; prefer only the documented fields.
 
+| Field | Required | Notes |
+| --- | --- | --- |
+| `title` | yes | Card + detail heading |
+| `summary` | yes | Card blurb + meta description |
+| `publishedAt` | yes | `YYYY-MM-DD`; shown on the card; tiebreaker after `order` |
+| `order` | no | Positive integer; lower appears first on `/tech/projects`. Default: after all explicitly ordered projects |
+| `images` | no | Public paths; 1 → single frame, 2+ → carousel |
+| `link` | no | Live product URL |
+| `draft` | no | Default `false`; omitted from production listings when `true` |
+
 ## Body links (required contract)
 
 On-site links must be **root-relative pathnames** (from the domain root), not filesystem paths to `.md` files.
@@ -29,6 +39,16 @@ On-site links must be **root-relative pathnames** (from the domain root), not fi
 Enforcement: `assertMarkdownLinksAllowed` in `src/lib/content/lintMarkdownLinks.ts`, called from `load.ts` when reading an entry. Invalid links fail at load/build with the file path and href.
 
 The renderer (`MarkdownBody`) also refuses dangerous schemes as defense in depth.
+
+## HTML comments
+
+Author-only notes may use HTML comments in the body:
+
+```html
+<!-- draft: true until cover images exist -->
+```
+
+`MarkdownBody` strips these before render (fenced code blocks are preserved). Do not use markdown `<!--` expecting it to show on the page.
 
 ## How pages use this
 
