@@ -1,7 +1,9 @@
 import {
   Column,
   Heading,
+  LetterFx,
   Meta,
+  RevealFx,
   Schema,
   Text,
 } from "@once-ui-system/core";
@@ -26,7 +28,7 @@ export async function generateMetadata() {
   });
 }
 
-export default function ProjectsPage() {
+export default function Projects() {
   const projects = getCollection("projects");
 
   return (
@@ -43,11 +45,15 @@ export default function ProjectsPage() {
       <Column maxWidth="m" gap="40" fillWidth>
         <Column gap="12" fillWidth>
           <Heading as="h1" variant="display-strong-s">
-            {projectsPageContent.title}
+            <LetterFx speed="medium" trigger="instant">
+              {projectsPageContent.title}
+            </LetterFx>
           </Heading>
-          <Text variant="body-default-l" onBackground="neutral-medium">
-            {projectsPageContent.description}
-          </Text>
+          <RevealFx delay={0.1}>
+            <Text variant="body-default-l" onBackground="neutral-medium">
+              {projectsPageContent.description}
+            </Text>
+          </RevealFx>
         </Column>
 
         {projects.length === 0 ? (

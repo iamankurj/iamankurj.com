@@ -9,14 +9,30 @@ import {
 } from "../resources/experience";
 
 describe("experienceContent", () => {
-  it("includes the legacy TL;DR highlights", () => {
-    expect(experienceContent.tldr.title).toBe("TL;DR");
-    expect(experienceContent.tldr.items).toHaveLength(5);
-    expect(experienceLinePlainText(experienceContent.tldr.items[0])).toContain(
-      "10+ years of experience",
+  it("includes the career history hero copy", () => {
+    expect(experienceContent.hero).toEqual({
+      title: "Career History",
+      subheadline:
+        "10+ years building resilient microservices, high-scale backend architectures, and user-facing products.",
+      lead: "Senior Product & Backend Engineer with a proven track record of leading mission-critical initiatives at high-growth enterprise SaaS platforms (Flybits) and big tech (Meta, Morgan Stanley, Credit Suisse).",
+    });
+  });
+
+  it("includes the impact metrics for the top stat strip", () => {
+    expect(experienceContent.metrics.items).toHaveLength(4);
+    expect(experienceContent.metrics.items.map((item) => item.value)).toEqual([
+      "900M+",
+      "4+",
+      "98%",
+      "0",
+    ]);
+    expect(experienceContent.metrics.items[0].label).toBe("Users");
+    expect(experienceContent.metrics.items[0].description).toContain(
+      "Messenger & Instagram Direct",
     );
-    expect(experienceLinePlainText(experienceContent.tldr.items[1])).toContain(
-      "900 million users",
+    expect(experienceContent.metrics.items[2].label).toBe("Manual Savings");
+    expect(experienceContent.metrics.items[3].description).toContain(
+      "zero post-release QA bugs",
     );
   });
 

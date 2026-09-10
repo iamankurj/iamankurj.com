@@ -27,6 +27,12 @@ export type TestimonialItem = {
   author?: TestimonialAuthor;
 };
 
+export type ImpactMetric = {
+  value: string;
+  label: string;
+  description: string;
+};
+
 /** Props for BlockQuote author/link; omits empty placeholders so nothing renders. */
 export function testimonialAttribution(author?: TestimonialAuthor): {
   author?: { name: string };
@@ -49,46 +55,42 @@ export function testimonialQuoteVariant(
 }
 
 export const experienceContent = {
-  tldr: {
-    title: "Summary",
+  hero: {
+    title: "Experience",
+    subheadline:
+      "10+ years building resilient microservices, high-scale backend architectures, and user-facing products.",
+    lead: "Senior Product & Backend Engineer with a proven track record of leading mission-critical initiatives at high-growth enterprise SaaS platforms (Flybits) and big tech (Meta, Morgan Stanley, Credit Suisse).",
+  },
+  metrics: {
     items: [
       {
-        segments: [
-          {
-            text: "10+ years of experience in the software industry, demonstrating strong problem-solving, technical, and interpersonal skills",
-          },
-        ],
+        value: "900M+",
+        label: "Users",
+        description:
+          "Developed features impacting over 900M users across Messenger & Instagram Direct at Meta.",
       },
       {
-        segments: [
-          { text: "Developed features impacting over 900 million users (at Meta)" },
-        ],
+        value: "4+",
+        label: "Yrs GoLang",
+        description:
+          "Built and maintained distributed microservices in Go, Postgres, AWS, and Kubernetes.",
       },
       {
-        segments: [
-          {
-            text: "4+ years of experience developing and maintaining scalable microservices in GoLang",
-          },
-        ],
+        value: "98%",
+        label: "Manual Savings",
+        description:
+          "Architected dynamic campaign lifecycle automation at Flybits for enterprise clients.",
       },
       {
-        segments: [
-          {
-            text: "3+ years of experience developing backend applications with Java/J2EE, REST, and Spring Boot",
-          },
-        ],
+        value: "0",
+        label: "QA Bugs",
+        description:
+          "Delivered end-to-end encryption workflows at Meta with 100% critical path coverage and zero post-release QA bugs.",
       },
-      {
-        segments: [
-          {
-            text: "1 year of experience in UI development using ExtJS, JS, HTML, CSS, and Java backend",
-          },
-        ],
-      },
-    ] satisfies ExperienceLine[],
+    ] satisfies ImpactMetric[],
   },
   work: {
-    title: "Work Experience",
+    title: "Career History",
     experiences: [
       {
         company: "Flybits",
