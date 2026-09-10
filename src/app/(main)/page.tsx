@@ -6,6 +6,7 @@ import {
   Button,
   Column,
   Heading,
+  LetterFx,
   Mask,
   MatrixFx,
   Media,
@@ -48,13 +49,20 @@ export default function Home() {
             gap="16"
           >
             <Row paddingY="2">
-              <Row gap="12" vertical="center">
-                <RevealFx>
-                  <Text marginLeft="4">
-                    Hi, I'm&nbsp;
-                  </Text>
-                  <strong className="mr-4" style={{ color: "var(--brand-on-background-medium)" }}>Ankur</strong>
-                </RevealFx>
+              <Row gap="4" vertical="center">
+                <LetterFx speed="medium" trigger="instant">
+                  Hi, I'm&nbsp;
+                </LetterFx>
+                <LetterFx
+                  speed="medium"
+                  trigger="instant"
+                  style={{
+                    color: "var(--brand-on-background-medium)",
+                    fontWeight: 600,
+                  }}
+                >
+                  Ankur
+                </LetterFx>
               </Row>
             </Row>
           </Badge>

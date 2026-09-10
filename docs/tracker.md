@@ -1,11 +1,12 @@
 # To Do
-- [ ] Reduce the delay between site-open and text fade in
+- [x] Reduce the delay between site-open and text fade in
   - [x] Reduced delay, making it slightly better. The rest is post-hydration start (`RevealFx` is client + `useEffect`), harder to fix for now
+  - [x] Change "Hi, I'm Ankur" to instant or CodeFx
 - [x] Change the background of the tech pages
 - [x] Add Github Repo link for iamankurj.com project
 - [x] Add [CourseCorrect](https://coursecorrect.fyi/)
-- [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
 - [ ] Change the component used for Summary on Experience page
+- [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
 - [ ] Ask Google to index
   - [ ] Go to https://search.google.com/search-console
   - [ ] Add property for https://iamankurj.com (Domain or URL-prefix). Verify ownership (DNS TXT is usual for Domain; HTML file/meta tag for URL-prefix).
