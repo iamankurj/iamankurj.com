@@ -3,10 +3,23 @@
   - [x] Reduced delay, making it slightly better. The rest is post-hydration start (`RevealFx` is client + `useEffect`), harder to fix for now
 - [x] Change the background of the tech pages
 - [x] Add Github Repo link for iamankurj.com project
-- [ ] Add [CourseCorrect](https://coursecorrect.fyi/)
+- [x] Add [CourseCorrect](https://coursecorrect.fyi/)
 - [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
-- [ ] Consider adding the name, company and LinkedIn link of the author in testimonials
 - [ ] Change the component used for Summary on Experience page
+- [ ] Ask Google to index
+  - [ ] Go to https://search.google.com/search-console
+  - [ ] Add property for https://iamankurj.com (Domain or URL-prefix). Verify ownership (DNS TXT is usual for Domain; HTML file/meta tag for URL-prefix).
+  - [ ] Open URL Inspection (top search bar).
+  - [ ] Paste https://iamankurj.com/ and wait for the check.
+  - [ ] If it says not on Google, click Request indexing.
+  - [ ] Repeat for important URLs (/tech/projects, /tech/experience, key project pages).
+  - [ ] Optional: Sitemaps → submit https://iamankurj.com/sitemap.xml (only if that file exists and is live).
+- [ ] Replace WhatsApp image with Google SERP image
+  - [ ] Open Google in an incognito window (less personalized).
+  - [ ] Search something specific, e.g. site:iamankurj.com or "Ankur Jain" Product Engineer.
+  - [ ] Find your result.
+  - [ ] Screenshot just that one result card (crop out other results if you want it clean).
+- [ ] Consider adding the name, company and LinkedIn link of the author in testimonials
 - [ ] Consider adding breadcrumb navigation for projects (since they're not part of the header)?
 - [ ] Should we add the location and local time (similar to magic portfolio)
 - [ ] Should we add the languages I speak (similar to magic portfolio)

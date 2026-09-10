@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#9585FA"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0A0910"/>
+
+  <!-- Markdown files: 280x168 -->
+  <rect x="48" y="276" width="280" height="168" rx="18" fill="#14121C" stroke="#5625F7" stroke-width="2"/>
+  <text x="188" y="334" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#F3F2FC">Markdown files</text>
+  <text x="188" y="364" text-anchor="middle" font-family="Menlo, Monaco, Consolas, monospace" font-size="13" fill="#B3A9FD">content/projects/*.md</text>
+  <line x1="76" y1="388" x2="300" y2="388" stroke="#2A2640" stroke-width="1"/>
+  <path d="M80 410 h14 l5 5 h26 v18 H80 z" fill="none" stroke="#8B879E" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="134" y="426" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em" fill="#8B879E">SRC/CONTENT</text>
+
+  <line x1="328" y1="360" x2="386" y2="360" stroke="#9585FA" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Content kit: 300x168 -->
+  <rect x="400" y="276" width="300" height="168" rx="18" fill="#14121C" stroke="#5625F7" stroke-width="2"/>
+  <text x="550" y="334" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#F3F2FC">Content kit</text>
+  <text x="550" y="364" text-anchor="middle" font-family="Menlo, Monaco, Consolas, monospace" font-size="12" fill="#B3A9FD">paths &#183; Zod &#183; loader &#183; link lint</text>
+  <line x1="428" y1="388" x2="672" y2="388" stroke="#2A2640" stroke-width="1"/>
+  <path d="M432 410 h14 l5 5 h26 v18 H432 z" fill="none" stroke="#8B879E" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="486" y="426" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em" fill="#8B879E">SRC/LIB/CONTENT</text>
+
+  <!-- fork spine -->
+  <path d="M700 360 H738" fill="none" stroke="#9585FA" stroke-width="2.5"/>
+  <path d="M738 360 V210 H778" fill="none" stroke="#9585FA" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M738 360 V430 H778" fill="none" stroke="#9585FA" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- List -->
+  <rect x="790" y="160" width="230" height="100" rx="16" fill="#14121C" stroke="#3A3450" stroke-width="2"/>
+  <rect x="812" y="188" width="24" height="30" rx="3" fill="none" stroke="#9585FA" stroke-width="1.5"/>
+  <line x1="818" y1="198" x2="830" y2="198" stroke="#9585FA" stroke-width="1.5"/>
+  <line x1="818" y1="204" x2="830" y2="204" stroke="#9585FA" stroke-width="1.5"/>
+  <line x1="818" y1="210" x2="826" y2="210" stroke="#9585FA" stroke-width="1.5"/>
+  <text x="850" y="204" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#F3F2FC">List</text>
+  <text x="850" y="230" font-family="Menlo, Monaco, Consolas, monospace" font-size="13" fill="#B3A9FD">/tech/projects</text>
+
+  <!-- Detail -->
+  <rect x="790" y="380" width="230" height="100" rx="16" fill="#14121C" stroke="#3A3450" stroke-width="2"/>
+  <rect x="812" y="408" width="24" height="30" rx="3" fill="none" stroke="#9585FA" stroke-width="1.5"/>
+  <line x1="818" y1="418" x2="830" y2="418" stroke="#9585FA" stroke-width="1.5"/>
+  <line x1="818" y1="424" x2="830" y2="424" stroke="#9585FA" stroke-width="1.5"/>
+  <line x1="818" y1="430" x2="826" y2="430" stroke="#9585FA" stroke-width="1.5"/>
+  <text x="850" y="424" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#F3F2FC">Detail</text>
+  <text x="850" y="450" font-family="Menlo, Monaco, Consolas, monospace" font-size="12" fill="#B3A9FD">/tech/projects/[slug]</text>
+
+  <line x1="1020" y1="430" x2="1058" y2="430" stroke="#9585FA" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Once UI adapter: wider so title fits on one line -->
+  <rect x="1070" y="350" width="170" height="160" rx="18" fill="#14121C" stroke="#5625F7" stroke-width="2"/>
+  <text x="1155" y="400" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#F3F2FC">Once UI adapter</text>
+  <text x="1155" y="428" text-anchor="middle" font-family="Menlo, Monaco, Consolas, monospace" font-size="11" fill="#B3A9FD">MarkdownBody</text>
+  <text x="1155" y="446" text-anchor="middle" font-family="Menlo, Monaco, Consolas, monospace" font-size="11" fill="#B3A9FD">&#8594; UI map</text>
+  <line x1="1094" y1="464" x2="1216" y2="464" stroke="#2A2640" stroke-width="1"/>
+  <circle cx="1108" cy="486" r="7" fill="none" stroke="#8B879E" stroke-width="1.5"/>
+  <text x="1108" y="490" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#8B879E">i</text>
+  <text x="1122" y="490" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#8B879E">swap later for MUI</text>
+</svg>
