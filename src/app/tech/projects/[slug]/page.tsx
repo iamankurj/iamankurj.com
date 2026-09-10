@@ -1,6 +1,6 @@
 import {
   Column,
-  Heading,
+  HeadingLink,
   Meta,
   Row,
   Schema,
@@ -11,6 +11,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { MarkdownBody } from "@/components/markdown/MarkdownBody";
+import { slugifyHeadingText } from "@/components/markdown/markdownLink";
 import { ProjectMedia } from "@/components/projects/ProjectMedia";
 import { getCollection, getEntry } from "@/lib/content/load";
 import {
@@ -87,13 +88,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {formatProjectDate(project.metadata.publishedAt)}
           </Text>
 
-          <Heading as="h1" variant="display-strong-s" wrap="balance">
+          <HeadingLink
+            as="h1"
+            id={slugifyHeadingText(project.metadata.title)}
+            textVariant="display-strong-s"
+          >
             {project.metadata.title}
-          </Heading>
+          </HeadingLink>
 
-          <Text variant="body-default-l" onBackground="neutral-medium" wrap="balance">
-            {project.metadata.summary}
-          </Text>
+          <Column maxWidth="s" fillWidth>
+            <Text
+              variant="body-default-l"
+              onBackground="neutral-medium"
+              wrap="balance"
+            >
+              {project.metadata.summary}
+            </Text>
+          </Column>
 
           {project.metadata.link ? (
             <Row marginTop="8">

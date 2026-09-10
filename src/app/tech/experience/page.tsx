@@ -2,11 +2,16 @@ import {
   Accordion,
   Column,
   Heading,
+  HeadingLink,
+  LetterFx,
+  RevealFx,
   Row,
-  Text,
+  Text
 } from "@once-ui-system/core";
 
+import { ExperienceMetrics } from "@/components/ExperienceMetrics";
 import { ExperienceTestimonials } from "@/components/ExperienceTestimonials";
+import { slugifyHeadingText } from "@/components/markdown/markdownLink";
 import {
   experienceContent,
   type ExperienceLine,
@@ -65,44 +70,70 @@ function ExperienceLines({
 }
 
 export default function Experience() {
-  const { tldr, work } = experienceContent;
+  const { hero, work } = experienceContent;
 
   return (
     <Column fillWidth horizontal="center">
-      <Column maxWidth="s" gap="24" fillWidth>
-        <Accordion title={tldr.title} open>
-          <ExperienceLines items={[...tldr.items]} variant="body-default-s" />
-        </Accordion>
+      <Column maxWidth="m" gap="xl" fillWidth>
+        <Column gap="12" fillWidth>
+          <Heading as="h1" variant="display-strong-s" marginBottom="20">
+            <LetterFx speed="medium" trigger="instant">
+              {hero.title}
+            </LetterFx>
+          </Heading>
+          <Column gap="12" maxWidth="xs" fillWidth>
+            <RevealFx delay={0.1}>
+              <Text variant="body-default-l" onBackground="neutral-medium">
+                {hero.subheadline}
+              </Text>
+            </RevealFx>
+            <RevealFx delay={0.2}>
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                {hero.lead}
+              </Text>
+            </RevealFx>
+          </Column>
+        </Column>
+
+        <RevealFx delay={0.3}>
+          <ExperienceMetrics />
+        </RevealFx>
 
         <ExperienceTestimonials />
 
-        <Heading as="h2" variant="heading-strong-m" marginTop="16">
-          {work.title}
-        </Heading>
+        <Column gap="16" fillWidth>
+          <HeadingLink
+            as="h2"
+            id={slugifyHeadingText(work.title)}
+            textVariant="heading-strong-m"
+          >
+            {work.title}
+          </HeadingLink>
 
-        <Column gap="8" fillWidth>
-          {work.experiences.map((experience) => (
-            <Accordion
-              key={`${experience.company}-${experience.startDate}`}
-              title={
-                <Row fillWidth horizontal="between" vertical="end" gap="8" wrap>
-                  <Text variant="body-strong-m">{experience.company}</Text>
-                  <Text variant="body-default-m" onBackground="neutral-weak">
-                    {`(${experience.startDate} - ${experience.endDate})`}
+          <Column gap="8" fillWidth>
+            {work.experiences.map((experience) => (
+              <Accordion
+                key={`${experience.company}-${experience.startDate}`}
+                title={
+                  <Row fillWidth horizontal="between" vertical="end" gap="8" wrap>
+                    <Text variant="body-strong-m">{experience.company}</Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {`(${experience.startDate} - ${experience.endDate})`}
+                    </Text>
+                  </Row>
+                }
+              >
+                <Column gap="12" fillWidth paddingBottom="16">
+                  <Text variant="body-default-s" onBackground="brand-medium">
+                    {experience.role}
                   </Text>
-                </Row>
-              }
-            >
-              <Column gap="12" fillWidth paddingBottom="16">
-                <Text variant="body-default-s" onBackground="brand-medium">
-                  {experience.role}
-                </Text>
-                {experience.items && experience.items.length > 0 && (
-                  <ExperienceLines items={experience.items} />
-                )}
-              </Column>
-            </Accordion>
-          ))}
+                  {experience.items && experience.items.length > 0 && (
+                    <ExperienceLines items={experience.items} />
+                  )}
+                </Column>
+              </Accordion>
+            ))}
+          </Column>
         </Column>
       </Column>
     </Column>

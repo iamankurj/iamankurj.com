@@ -5,8 +5,9 @@
 - [x] Change the background of the tech pages
 - [x] Add Github Repo link for iamankurj.com project
 - [x] Add [CourseCorrect](https://coursecorrect.fyi/)
-- [ ] Change the component used for Summary on Experience page
+- [ ] Revamp the Experience page
 - [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
+- [ ] Add sitemap and robots.txt and anything else needed for SEO (Once-UI Meta, Schema, ...). Experience page for one isn't SEO ready
 - [ ] Ask Google to index
   - [ ] Go to https://search.google.com/search-console
   - [ ] Add property for https://iamankurj.com (Domain or URL-prefix). Verify ownership (DNS TXT is usual for Domain; HTML file/meta tag for URL-prefix).

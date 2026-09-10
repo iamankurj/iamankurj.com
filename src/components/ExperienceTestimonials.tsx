@@ -4,10 +4,11 @@ import {
   BlockQuote,
   Carousel,
   Column,
-  Heading,
+  HeadingLink,
   Text,
 } from "@once-ui-system/core";
 
+import { slugifyHeadingText } from "@/components/markdown/markdownLink";
 import {
   experienceContent,
   testimonialAttribution,
@@ -23,9 +24,13 @@ export function ExperienceTestimonials() {
 
   return (
     <Column fillWidth gap="16">
-      <Heading as="h2" variant="heading-strong-m">
+      <HeadingLink
+        as="h2"
+        id={slugifyHeadingText(testimonials.title)}
+        textVariant="heading-strong-m"
+      >
         {testimonials.title}
-      </Heading>
+      </HeadingLink>
       <Carousel
         fillWidth
         aspectRatio="auto"
