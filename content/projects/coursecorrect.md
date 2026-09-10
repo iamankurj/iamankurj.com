@@ -1,12 +1,13 @@
 ---
 title: "CourseCorrect: AI Learning Discovery Platform"
-summary: "An AI-powered course discovery product that aggregates and editorially normalizes offerings across leading providers like Coursera, edX, Udemy, DataCamp, and Pluralsight, so learners pick a path with verified data, not marketing copy or LLM guesswork."
+summary: "Live AI course discovery across Coursera, edX, Udemy, and more. As co-founder/CTO I owned it end to end: scrape/extract pipeline, Postgres FTS + vectors, hybrid search, and catalogue RAG."
 publishedAt: "2025-06-01"
 order: 1
 images:
   - "/images/projects/coursecorrect/cover-01-home.webp"
   - "/images/projects/coursecorrect/cover-02-search.webp"
   - "/images/projects/coursecorrect/cover-03-course-detail.webp"
+  - "/images/projects/coursecorrect/responsive-dual-modes.webp"
 link: "https://coursecorrect.fyi"
 draft: false
 ---
@@ -15,7 +16,7 @@ draft: false
 
 [CourseCorrect](https://coursecorrect.fyi) is a live product that helps ambitious learners cut through MOOC overload. Instead of mirroring provider marketing pages, it builds an **editorial catalogue**: courses, programs, and degrees scraped directly from major providers, normalized with AI, searchable with hybrid keyword + semantic ranking, and explorable with an assistant (Cora) that can RAG over the full catalogue.
 
-I am co-founder and CTO. The engineering work I own spans product architecture, the Next.js frontend, the Hono/Postgres API, and the GCP scraper + extraction pipeline. The business problem is simple: people waste weekends comparing open tabs across Coursera, edX, Udemy, and friends, then still enroll with low confidence. Generic chatbots can *name* courses; they cannot reliably show fresh provider data, structured cross-provider filters, or career claims grounded in labor-market sources ([O\*NET](https://www.onetonline.org/) / [BLS](https://www.bls.gov/ooh/)).
+I am co-founder and CTO. I own the product architecture and the hard path end to end: Next.js UI, Hono API, GCP scrape/extract jobs, Postgres with full-text + vectors, hybrid search, and Cora’s catalogue RAG. The business problem is simple: people waste weekends comparing open tabs across Coursera, edX, Udemy, and friends, then still enroll with low confidence. Generic chatbots can *name* courses; they cannot reliably show fresh provider data, structured cross-provider filters, or career claims grounded in labor-market sources ([O\*NET](https://www.onetonline.org/) / [BLS](https://www.bls.gov/ooh/)).
 
 **What shipped (user-facing):** search with filters and sort, resource detail pages with AI summaries and skills, subject pages, Firebase auth + saved courses, affiliate enroll links via Impact, and Cora (rate-limited AI chat). Monetization in this phase is affiliate commission on enroll clicks, not a paywall.
 
@@ -92,6 +93,7 @@ CourseCorrect is live at [coursecorrect.fyi](https://coursecorrect.fyi): a worki
 
 **Credible engineering outcomes (no vanity growth metrics):**
 
+- Owned the 1.5 rebuild end to end: provider scrape → GCS → Gemini extract → Postgres (FTS + pgvector) → hybrid search and catalogue RAG.
 - Replaced a Class Central-dependent / multi-store data path with direct provider collection and a single Postgres system for relational data, full-text search, and vectors.
 - Built a re-runnable editorial pipeline (GCS HTML → Gemini → normalized catalogue) designed for monthly refresh and prompt iteration.
 - Shipped hybrid search and catalogue-RAG chat on that foundation, with auth and saved courses preserved across the rebuild.
