@@ -52,8 +52,8 @@ Author-only notes may use HTML comments in the body:
 
 ## How pages use this
 
-- List: `src/app/(main)/tech/projects/page.tsx` → `getCollection("projects")` + `ProjectCard`
-- Detail: `src/app/(main)/tech/projects/[slug]/page.tsx` → `getEntry` + `MarkdownBody`
+- List: `src/app/tech/projects/page.tsx` → `getCollection("projects")` + `ProjectCard`
+- Detail: `src/app/tech/projects/[slug]/page.tsx` → `getEntry` + `MarkdownBody`
 - Images: `ProjectMedia` renders nothing / single `Media` / `Carousel` from frontmatter `images` length
 
 Add a file under `content/projects/` (see `iamankurj-com.md` as a full example), restart/rebuild, and it appears (non-draft in production).

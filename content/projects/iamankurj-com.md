@@ -30,7 +30,7 @@ The system is intentionally thin: static-first Next.js App Router pages, a files
 
 ![System diagram: markdown files flow through the content kit to list and detail routes, then the Once UI markdown adapter](/images/projects/iamankurj-com/architecture.svg)
 
-- **Routing / IA:** App Router under `(main)`. Tech surfaces live at `/tech/experience` and `/tech/projects` (plus `[slug]`). Content folders are not mirrored under `app/`. URL namespace ≠ filesystem namespace.
+- **Routing / IA:** App Router with root `layout.tsx`. Tech surfaces live at `/tech/experience` and `/tech/projects` (plus `[slug]`). Content folders are not mirrored under `app/`. URL namespace ≠ filesystem namespace.
 - **Content kit:** `getCollection` / `getEntry` read `.md` via `fs` + `gray-matter`, validate frontmatter with Zod, derive `slug` from the filename, sort by `publishedAt`, and honor `draft` (omitted in production).
 - **Link contract:** On-site markdown links must be root-relative (`/tech/...`). Relative `.md` paths and dangerous URL schemes fail at load time so bad authoring does not ship quietly.
 - **Rendering:** Plain Markdown + GFM mapped to Once UI. Layout chrome (title, date, external CTA) stays in React pages, not in the markdown file. Multiple frontmatter images use a carousel; a single image stays a simple media frame.
