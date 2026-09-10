@@ -4,9 +4,9 @@ summary: "A Next.js personal brand site with a portable markdown content pipelin
 publishedAt: "2026-09-09"
 order: 2
 images:
-  - "/images/projects/iamankurj-com/cover-01-home.jpg"
-  - "/images/projects/iamankurj-com/cover-02-experience.jpg"
-  - "/images/projects/iamankurj-com/cover-03-project-detail.jpg"
+  - "/images/projects/iamankurj-com/cover-01-home.webp"
+  - "/images/projects/iamankurj-com/cover-02-home-responsive.webp"
+  - "/images/projects/iamankurj-com/cover-03-og-preview.webp"
 link: "https://iamankurj.com"
 draft: false
 ---
@@ -28,19 +28,7 @@ Goals for the revamp:
 
 The system is intentionally thin: static-first Next.js App Router pages, a filesystem content kit, and a UI-kit-specific markdown renderer.
 
-```text
-content/projects/*.md
-        │
-        ▼
-src/lib/content/     (portable: paths, Zod schemas, loader, link lint)
-        │
-        ├─► /tech/projects           list (ProjectCard)
-        └─► /tech/projects/[slug]    detail chrome + MarkdownBody
-                                              │
-                                              ▼
-                                    Once UI component map
-                                    (swap later for MUI)
-```
+![System diagram: markdown files flow through the content kit to list and detail routes, then the Once UI markdown adapter](/images/projects/iamankurj-com/architecture.svg)
 
 - **Routing / IA:** App Router under `(main)`. Tech surfaces live at `/tech/experience` and `/tech/projects` (plus `[slug]`). Content folders are not mirrored under `app/`. URL namespace ≠ filesystem namespace.
 - **Content kit:** `getCollection` / `getEntry` read `.md` via `fs` + `gray-matter`, validate frontmatter with Zod, derive `slug` from the filename, sort by `publishedAt`, and honor `draft` (omitted in production).
@@ -48,19 +36,17 @@ src/lib/content/     (portable: paths, Zod schemas, loader, link lint)
 - **Rendering:** Plain Markdown + GFM mapped to Once UI. Layout chrome (title, date, external CTA) stays in React pages, not in the markdown file. Multiple frontmatter images use a carousel; a single image stays a simple media frame.
 - **Experience data:** Career timeline and testimonials remain structured TypeScript for nested content; projects use markdown because case studies are long-form and change independently.
 
-![System diagram: markdown files flow through the content kit to list and detail routes, then the Once UI markdown adapter](/images/projects/iamankurj-com/architecture.png)
-
 ## Tech Stack & Rationale
 
-| Layer | Choice | Why |
-| --- | --- | --- |
-| Framework | Next.js 16 (App Router) | File routes, SSG for project pages, strong TypeScript DX |
-| Language | TypeScript | Safer refactors as collections and schemas grow |
-| UI | Once UI (`@once-ui-system/core`) | Coherent visual system without designing every primitive |
-| Content | Markdown + gray-matter + Zod | No CMS; invalid posts fail loudly at load/build |
-| Markdown render | react-markdown + remark-gfm | Portable body string; tables and code without MDX lock-in |
-| Tests | Vitest (+ Testing Library for the markdown adapter) | Loader, schemas, and link rules stay regression-safe |
-| Hosting | Static-friendly Next deploy | Project pages prerender from `generateStaticParams` |
+| Layer           | Choice                                              | Why                                                       |
+| --------------- | --------------------------------------------------- | --------------------------------------------------------- |
+| Framework       | Next.js 16 (App Router)                             | File routes, SSG for project pages, strong TypeScript DX  |
+| Language        | TypeScript                                          | Safer refactors as collections and schemas grow           |
+| UI              | Once UI (`@once-ui-system/core`)                    | Coherent visual system without designing every primitive  |
+| Content         | Markdown + gray-matter + Zod                        | No CMS; invalid posts fail loudly at load/build           |
+| Markdown render | react-markdown + remark-gfm                         | Portable body string; tables and code without MDX lock-in |
+| Tests           | Vitest (+ Testing Library for the markdown adapter) | Loader, schemas, and link rules stay regression-safe      |
+| Hosting         | Static-friendly Next deploy                         | Project pages prerender from `generateStaticParams`       |
 
 Skipped on purpose: a headless CMS, MDX-in-content, and a separate design-system package. Those add process cost before the site has enough editors or page types to justify them.
 
