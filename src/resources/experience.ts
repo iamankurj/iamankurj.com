@@ -375,20 +375,6 @@ export const experienceContent = {
   },
 } as const;
 
-export function workExperienceLabel(experience: {
-  role: string;
-  company: string;
-}): string {
-  return `${experience.role}, ${experience.company}`;
-}
-
-export function workExperienceDateRange(experience: {
-  startDate: string;
-  endDate: string;
-}): string {
-  return `${experience.startDate} - ${experience.endDate}`;
-}
-
 export function experienceLinePlainText(line: ExperienceLine): string {
   return line.segments.map((segment) => segment.text).join("");
 }

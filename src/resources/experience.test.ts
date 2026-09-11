@@ -5,8 +5,6 @@ import {
   experienceLinePlainText,
   testimonialAttribution,
   testimonialQuoteVariant,
-  workExperienceDateRange,
-  workExperienceLabel,
 } from "../resources/experience";
 
 describe("experienceContent", () => {
@@ -109,27 +107,5 @@ describe("testimonialQuoteVariant", () => {
   it("drops to body when a quote would overflow the fixed slide", () => {
     const longQuote = "a".repeat(141);
     expect(testimonialQuoteVariant(longQuote)).toBe("body-default-m");
-  });
-});
-
-describe("workExperienceLabel", () => {
-  it("formats role and company for Timeline labels", () => {
-    expect(
-      workExperienceLabel({
-        role: "Server Engineer (Well-Being Engineering)",
-        company: "Meta",
-      }),
-    ).toBe("Server Engineer (Well-Being Engineering), Meta");
-  });
-});
-
-describe("workExperienceDateRange", () => {
-  it("formats the date range for Timeline descriptions", () => {
-    expect(
-      workExperienceDateRange({
-        startDate: "Feb 2022",
-        endDate: "May 2023",
-      }),
-    ).toBe("Feb 2022 - May 2023");
   });
 });

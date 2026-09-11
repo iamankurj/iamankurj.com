@@ -13,10 +13,8 @@ import { slugifyHeadingText } from "@/components/markdown/markdownLink";
 import {
   experienceContent,
   experienceLinePlainText,
-  workExperienceDateRange,
-  workExperienceLabel,
   type ExperienceLine,
-  type WorkExperience,
+  type WorkExperience
 } from "@/resources/experience";
 
 function AchievementSegments({ line }: { line: ExperienceLine }) {
@@ -83,9 +81,10 @@ export function ExperienceWork() {
       <Timeline
         fillWidth
         alignment="left"
+        size="xs"
         items={work.experiences.map((experience) => ({
-          label: workExperienceLabel(experience),
-          description: workExperienceDateRange(experience),
+          label: <Row marginBottom="16" textVariant="label-medium-l">{experience.role}, {experience.company}</Row>,
+          description: `${experience.startDate} - ${experience.endDate}`,
           state: experience.state ?? "default",
           children: <ExperienceTimelineBody experience={experience} />,
         }))}
