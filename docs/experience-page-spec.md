@@ -34,6 +34,20 @@ Keep the existing custom carousel we have. Try to see how a highlighted blockquo
 
 ### 2.4 Work Experience Breakdown (Chronological)
 
+**label**: {jobTitle}, {company} (for example: Senior Software Engineering Consultant, Flybits)
+
+**description**:
+"{dateFrom} - {dateTo}"
+
+**state**: "defaut" (since all are past, none is active at this time, maybe it should come from the data though, for future active one)
+
+**marker**:
+Role focus
+
+**children**:
+List of comma separated tech stack tags (with variant info perhaps?), followed by:
+List of key achievements (perhaps bulleted)
+
 #### 1. Flybits | Senior Software Engineering Consultant
 
 * **Dates:** Apr 2023 – Dec 2025
@@ -54,10 +68,10 @@ Keep the existing custom carousel we have. Try to see how a highlighted blockquo
 * **Role Focus:** Security, Scale & Privacy Infrastructure
 * **Tech Stack Tags:** `Hack/PHP`, `End-to-End Encryption`, `Distributed Systems`
 * **Key Achievements:**
-* Owned mission-critical **End-to-End Encryption (E2EE)** projects across Messenger and Instagram Direct platforms.
+* Owned mission-critical **End-to-End Encryption (E2EE)** projects across Facebook Messenger and Instagram Direct platforms.
 * Architected safety and well-being features for Messenger group chats and community messaging.
 * Maintained exceptionally high code quality standards: achieved **>80% overall test coverage**, **100% significant code path coverage**, and **0 post-release QA bugs**.
-* Recognized as a **Top 25% Privacy Contributor** at Meta and a top Docuthon contributor within the Well-Being organization.
+* Recognized as a **Top 25% Privacy Contributor** at Meta and a top Docuthon contributor, and a dedicated mentor for engineering interns within the Well-Being organization.
 
 
 
@@ -68,9 +82,10 @@ Keep the existing custom carousel we have. Try to see how a highlighted blockquo
 * **Tech Stack Tags:** `GoLang`, `PostgreSQL`, `MongoDB`, `AWS`, `Kubernetes`, `Docker`
 * **Key Achievements:**
 * Owned end-to-end design and implementation of multi-service backend features.
-* Built dynamic location-based push notification lifecycle automation, reducing manual setup time by **98% for Flybits' largest enterprise client**.
+* Built dynamic location-based content and push notification lifecycle automation, reducing manual setup time by **98% for Flybits' largest enterprise client**.
 * Scaled push notification systems to support **6M+ users per campaign**, implementing automatic failure recovery, starvation prevention, and resumption mechanisms.
 * Designed Templatization 2.0 to simplify user journey creation across the platform.
+* Mentored junior engineers on system design principles, clean code quality, domain knowledge, and testing best practices.
 
 
 
@@ -87,7 +102,7 @@ Keep the existing custom carousel we have. Try to see how a highlighted blockquo
 #### 5. Credit Suisse | Technical Analyst
 
 * **Dates:** Jul 2015 – Jul 2017
-* **Role Focus:** Full-Stack & Front-Office Systems
+* **Role Focus:** Enterprise Full-Stack Applications
 * **Tech Stack Tags:** `Java 8`, `Spring Boot`, `JavaScript (ExtJS 6)`, `MongoDB`, `C#.NET`
 * **Key Achievements:**
 * **Prime Services IT:** Developed Client Workstation, a consolidated management portal for CSRs using JavaScript (ExtJS 6), Java 8 (Spring Boot), and MongoDB.
@@ -95,10 +110,14 @@ Keep the existing custom carousel we have. Try to see how a highlighted blockquo
 
 
 
-#### 6. Built.io (Raw Eng.) | Software Development Intern
+#### 6. Built.io (Raw Eng.) | Software Engineering Intern
 
 * **Dates:** Jan 2015 – Jun 2015
-* **Tech Stack Tags:** `Node.js`, `React`
+* **Role Focus**: Backend Engineering & Platform Infrastructure
+* **Tech Stack Tags**: `Node.js`, `JavaScript`, `Flatiron`, `React`, `Asynchronous I/O`
+* **Key Achievements:**
+* Worked on the core **Mobile Backend-as-a-Service (MBaaS)** product using Node.js (Flatiron framework) and React.
+* Gained foundational experience with non-blocking I/O, event loop mechanics, and asynchronous architecture in JavaScript.
 
 ---
 

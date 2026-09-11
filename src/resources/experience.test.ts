@@ -1,17 +1,18 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  experienceAccordionTitle,
   experienceContent,
   experienceLinePlainText,
   testimonialAttribution,
   testimonialQuoteVariant,
+  workExperienceDateRange,
+  workExperienceLabel,
 } from "../resources/experience";
 
 describe("experienceContent", () => {
   it("includes the career history hero copy", () => {
     expect(experienceContent.hero).toEqual({
-      title: "Career History",
+      title: "Experience",
       subheadline:
         "10+ years building resilient microservices, high-scale backend architectures, and user-facing products.",
       lead: "Senior Product & Backend Engineer with a proven track record of leading mission-critical initiatives at high-growth enterprise SaaS platforms (Flybits) and big tech (Meta, Morgan Stanley, Credit Suisse).",
@@ -36,12 +37,10 @@ describe("experienceContent", () => {
     );
   });
 
-  it("lists work experiences in chronological order from the legacy resume", () => {
-    const companies = experienceContent.work.experiences.map(
-      (experience) => experience.company,
-    );
+  it("lists work experiences from the experience page spec", () => {
+    const experiences = experienceContent.work.experiences;
 
-    expect(companies).toEqual([
+    expect(experiences.map((experience) => experience.company)).toEqual([
       "Flybits",
       "Meta",
       "Flybits",
@@ -49,17 +48,20 @@ describe("experienceContent", () => {
       "Credit Suisse",
       "Built.io (Raw Eng.)",
     ]);
-    expect(experienceContent.work.experiences[0].endDate).toBe("Dec 2025");
-    expect(experienceContent.work.experiences.at(-1)?.role).toContain("Intern");
-  });
-
-  it("preserves nested highlights for the current Flybits role", () => {
-    const lead = experienceContent.work.experiences[0].items?.[0];
-
-    expect(lead).toBeDefined();
-    expect(experienceLinePlainText(lead!)).toContain("Engineering Lead");
-    expect(lead!.subItems).toHaveLength(2);
-    expect(experienceLinePlainText(lead!.subItems![0])).toContain("Flow Visualizer");
+    expect(experiences[0]).toMatchObject({
+      role: "Senior Software Engineering Consultant",
+      startDate: "Apr 2023",
+      endDate: "Dec 2025",
+      roleFocus: "Engineering Leadership, Architecture & Client Delivery",
+      tags: ["GoLang", "Microservices", "System Design", "UI/UX Strategy"],
+      state: "default",
+    });
+    expect(experiences[0].achievements).toHaveLength(5);
+    expect(experienceLinePlainText(experiences[0].achievements[0])).toContain(
+      "Flow Visualizer",
+    );
+    expect(experiences.at(-1)?.role).toBe("Software Engineering Intern");
+    expect(experiences.at(-1)?.tags).toContain("Node.js");
   });
 
   it("includes the legacy testimonials for the carousel", () => {
@@ -110,10 +112,24 @@ describe("testimonialQuoteVariant", () => {
   });
 });
 
-describe("experienceAccordionTitle", () => {
-  it("formats company and date range for accordion headers", () => {
-    expect(experienceAccordionTitle("Meta", "Feb '22", "May '23")).toBe(
-      "Meta (Feb '22 - May '23)",
-    );
+describe("workExperienceLabel", () => {
+  it("formats role and company for Timeline labels", () => {
+    expect(
+      workExperienceLabel({
+        role: "Server Engineer (Well-Being Engineering)",
+        company: "Meta",
+      }),
+    ).toBe("Server Engineer (Well-Being Engineering), Meta");
+  });
+});
+
+describe("workExperienceDateRange", () => {
+  it("formats the date range for Timeline descriptions", () => {
+    expect(
+      workExperienceDateRange({
+        startDate: "Feb 2022",
+        endDate: "May 2023",
+      }),
+    ).toBe("Feb 2022 - May 2023");
   });
 });

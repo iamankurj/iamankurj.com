@@ -8,13 +8,18 @@ export type ExperienceLine = {
   subItems?: ExperienceLine[];
 };
 
+export type WorkTimelineState = "default" | "active";
+
 export type WorkExperience = {
   company: string;
   role: string;
-  location: string;
   startDate: string;
   endDate: string;
-  items?: ExperienceLine[];
+  roleFocus: string;
+  tags: string[];
+  /** Timeline marker state; omit or use `"default"` for past roles. */
+  state?: WorkTimelineState;
+  achievements: ExperienceLine[];
 };
 
 export type TestimonialAuthor = {
@@ -95,66 +100,50 @@ export const experienceContent = {
       {
         company: "Flybits",
         role: "Senior Software Engineering Consultant",
-        location: "Canada",
-        startDate: "Apr '23",
+        startDate: "Apr 2023",
         endDate: "Dec 2025",
-        items: [
+        roleFocus: "Engineering Leadership, Architecture & Client Delivery",
+        tags: ["GoLang", "Microservices", "System Design", "UI/UX Strategy"],
+        state: "default",
+        achievements: [
           {
-            segments: [{ text: "Engineering Lead", strong: true }, { text: " for" }],
-            subItems: [
+            segments: [
+              { text: "Served as " },
+              { text: "Engineering Lead", strong: true },
+              { text: " for the " },
+              { text: "Flow Visualizer", strong: true },
               {
-                segments: [
-                  { text: "Flow Visualizer", strong: true },
-                  {
-                    text: ": A mission-critical project central to enhancing marketer experience on the platform",
-                  },
-                ],
-              },
-              {
-                segments: [
-                  { text: "Merchant Offers Solution", strong: true },
-                  {
-                    text: ": A new project enabling local merchants to deliver personalized rewards programs efficiently to end users",
-                  },
-                ],
+                text: ", a mission-critical platform upgrade enhancing marketer workflows and platform usability.",
               },
             ],
           },
           {
             segments: [
-              { text: "Technical Influence", strong: true },
+              { text: "Led technical development for the " },
+              { text: "Merchant Offers Solution", strong: true },
               {
-                text: ": Leveraging technical expertise to shape UX, UI, and product design decisions",
+                text: ", enabling local merchants to deliver targeted rewards programs.",
               },
             ],
           },
           {
             segments: [
-              { text: "Collaboration", strong: true },
               {
-                text: ": Partnering closely with the Solutions team to develop user experiences and flows for complex workflows",
+                text: "Influenced product design and UX strategy by bridging cross-functional collaboration between engineering and the Solutions team.",
               },
             ],
           },
           {
             segments: [
-              { text: "Content Prioritization", strong: true },
               {
-                text: ": Actively contributing to the discovery and design phases of a key feature impacting content positioning and ranking for users",
+                text: "Spearheaded discovery and architecture for core content positioning and ranking systems.",
               },
             ],
           },
           {
             segments: [
-              { text: "Coding & Reviews", strong: true },
-              { text: ": Hands-on coding contributions and code reviews" },
-            ],
-          },
-          {
-            segments: [
-              { text: "Mentorship", strong: true },
               {
-                text: ": Mentoring junior engineers on coding practices, code quality, system design, and efficiency",
+                text: "Mentored junior engineers on clean code practices, system efficiency, and architectural patterns.",
               },
             ],
           },
@@ -162,65 +151,47 @@ export const experienceContent = {
       },
       {
         company: "Meta",
-        role: "Server Engineer, Remote - Well-Being Engineering",
-        location: "Canada",
-        startDate: "Feb '22",
-        endDate: "May '23",
-        items: [
+        role: "Server Engineer (Well-Being Engineering)",
+        startDate: "Feb 2022",
+        endDate: "May 2023",
+        roleFocus: "Security, Scale & Privacy Infrastructure",
+        tags: ["Hack/PHP", "End-to-End Encryption", "Distributed Systems"],
+        state: "default",
+        achievements: [
           {
             segments: [
-              { text: "Owned the team’s " },
-              { text: "mission critical end-to-end encryption projects", strong: true },
-              { text: " for Messenger and Instagram Direct" },
-            ],
-          },
-          {
-            segments: [
+              { text: "Owned mission-critical " },
+              { text: "End-to-End Encryption (E2EE)", strong: true },
               {
-                text: "Implemented new well-being features for Messenger group chat and community messaging",
+                text: " projects across Facebook Messenger and Instagram Direct platforms.",
               },
             ],
           },
           {
             segments: [
-              { text: "More than " },
-              { text: "80% overall test coverage", strong: true },
-              { text: " and " },
-              { text: "100% significant code coverage", strong: true },
-              { text: " for the new code" },
+              {
+                text: "Architected safety and well-being features for Messenger group chats and community messaging.",
+              },
             ],
           },
           {
             segments: [
-              { text: "0 QA bugs", strong: true },
-              { text: " identified in the new code" },
+              { text: "Maintained exceptionally high code quality standards: achieved " },
+              { text: ">80% overall test coverage", strong: true },
+              { text: ", " },
+              { text: "100% significant code path coverage", strong: true },
+              { text: ", and " },
+              { text: "0 post-release QA bugs", strong: true },
+              { text: "." },
             ],
           },
           {
             segments: [
-              { text: "Extensive cross-functional collaboration", strong: true },
-              { text: " with several teams" },
-            ],
-          },
-          {
-            segments: [
-              { text: "One of the " },
-              { text: "top Docuthon contributors", strong: true },
-              { text: " from the Well-Being org." },
-            ],
-          },
-          {
-            segments: [
-              { text: "One of the " },
-              { text: "top 25% privacy contributors", strong: true },
-              { text: " at Meta" },
-            ],
-          },
-          {
-            segments: [
-              { text: "Responsible for " },
-              { text: "mentoring interns", strong: true },
-              { text: " in the team" },
+              { text: "Recognized as a " },
+              { text: "Top 25% Privacy Contributor", strong: true },
+              {
+                text: " at Meta and a top Docuthon contributor, and a dedicated mentor for engineering interns within the Well-Being organization.",
+              },
             ],
           },
         ],
@@ -228,73 +199,77 @@ export const experienceContent = {
       {
         company: "Flybits",
         role: "Senior Backend Engineer",
-        location: "Canada",
-        startDate: "May '19",
-        endDate: "Jan '22",
-        items: [
+        startDate: "May 2019",
+        endDate: "Jan 2022",
+        roleFocus: "Distributed Backend & Data Lifecycles",
+        tags: ["GoLang", "PostgreSQL", "MongoDB", "AWS", "Kubernetes", "Docker",],
+        state: "default",
+        achievements: [
           {
             segments: [
-              { text: "Owned/designed/implemented/supervised " },
-              { text: "multiple complex projects", strong: true },
-              { text: ", each " },
-              { text: "spanning multiple services", strong: true },
-            ],
-            subItems: [
               {
-                segments: [
-                  {
-                    text: "Dynamic location based content and push lifecycle management, ",
-                  },
-                  { text: "saving over 98% of manual time spent", strong: true },
-                  {
-                    text: " per campaign for the biggest client (also making the process far less error prone)",
-                  },
-                ],
-              },
-              {
-                segments: [
-                  {
-                    text: "Templatization 2.0 - Creation of user journeys making it super easy for users to use the product",
-                  },
-                ],
-              },
-              {
-                segments: [
-                  { text: "Scaled push notifications to " },
-                  { text: "support over 6 million users per campaign", strong: true },
-                  {
-                    text: " while ensuring system resilience with starvation prevention, failure recovery and automatic resumption",
-                  },
-                ],
+                text: "Owned end-to-end design and implementation of multi-service backend features.",
               },
             ],
           },
           {
             segments: [
               {
-                text: "Mentored juniors on design principles, code quality, domain knowledge, testing best practices",
+                text: "Built dynamic location-based content and push notification lifecycle automation, reducing manual setup time by ",
+              },
+              {
+                text: "98% for Flybits' largest enterprise client",
+                strong: true,
+              },
+              { text: "." },
+            ],
+          },
+          {
+            segments: [
+              { text: "Scaled push notification systems to support " },
+              { text: "6M+ users per campaign", strong: true },
+              {
+                text: ", implementing automatic failure recovery, starvation prevention, and resumption mechanisms.",
               },
             ],
           },
           {
             segments: [
-              { text: "GoLang, Postgres, MongoDB, AWS, Kubernetes, Docker" },
+              {
+                text: "Designed Templatization 2.0 to simplify user journey creation across the platform.",
+              },
+            ],
+          },
+          {
+            segments: [
+              {
+                text: "Mentored junior engineers on system design principles, clean code quality, domain knowledge, and testing best practices.",
+              },
             ],
           },
         ],
       },
       {
         company: "Morgan Stanley",
-        role: "Senior Associate Developer, Collateral Management - PBIT, Mumbai",
-        location: "India",
-        startDate: "Aug '17",
-        endDate: "Apr '19",
-        items: [
+        role: "Senior Associate Developer (Collateral Management)",
+        startDate: "Aug 2017",
+        endDate: "Apr 2019",
+        roleFocus: "Enterprise Data Warehousing & Regulatory Compliance",
+        tags: ["Java 8", "IBM DB2", "Sybase", "Scala"],
+        state: "default",
+        achievements: [
           {
             segments: [
+              { text: "Developed core software for " },
+              { text: "OneSource", strong: true },
               {
-                text: "S/w development for OneSource (a data warehouse for Collateral Management) and for UMR (Uncleared Margin Rules) Phase 4 - Java 8, IBM DB2, Sybase and Scala",
+                text: " (enterprise Collateral Management data warehouse) and implemented systems for ",
               },
+              {
+                text: "Uncleared Margin Rules (UMR) Phase 4",
+                strong: true,
+              },
+              { text: " regulatory compliance." },
             ],
           },
         ],
@@ -302,31 +277,25 @@ export const experienceContent = {
       {
         company: "Credit Suisse",
         role: "Technical Analyst",
-        location: "India",
-        startDate: "Jul '15",
-        endDate: "Jul '17",
-        items: [
+        startDate: "Jul 2015",
+        endDate: "Jul 2017",
+        roleFocus: "Enterprise Full-Stack Applications",
+        tags: ["Java 8", "Spring Boot", "JavaScript (ExtJS 6)", "MongoDB", "C#.NET",],
+        state: "default",
+        achievements: [
           {
-            segments: [{ text: "Prime Services IT, Mumbai (Aug ’16 - July ‘17)" }],
-            subItems: [
+            segments: [
+              { text: "Prime Services IT:", strong: true },
               {
-                segments: [
-                  {
-                    text: "S/w development for Client Workstation, a client-driven, consolidated view for the CSRs to be able to better manage their day to day work - JavaScript (ExtJS 6), Java 8 (Spring Boot), MongoDB",
-                  },
-                ],
+                text: " Developed Client Workstation, a consolidated management portal for CSRs using JavaScript (ExtJS 6), Java 8 (Spring Boot), and MongoDB.",
               },
             ],
           },
           {
-            segments: [{ text: "Trade Management, Pune (July ’15 - July ’16)" }],
-            subItems: [
+            segments: [
+              { text: "Trade Management:", strong: true },
               {
-                segments: [
-                  {
-                    text: "Support and software development for FOCash (Front Office Cash Sourcing) system - C#.net, VBA and Java 6",
-                  },
-                ],
+                text: " Maintained and enhanced the Front Office Cash Sourcing (FOCash) system using C#.NET, VBA, and Java.",
               },
             ],
           },
@@ -334,10 +303,33 @@ export const experienceContent = {
       },
       {
         company: "Built.io (Raw Eng.)",
-        role: "Software Development Intern - Node.js, React",
-        location: "India",
-        startDate: "Jan '15",
-        endDate: "Jun '15",
+        role: "Software Engineering Intern",
+        startDate: "Jan 2015",
+        endDate: "Jun 2015",
+        roleFocus: "Backend Engineering & Platform Infrastructure",
+        tags: ["Node.js", "JavaScript", "Flatiron", "React", "Asynchronous I/O",],
+        state: "default",
+        achievements: [
+          {
+            segments: [
+              { text: "Worked on the core " },
+              {
+                text: "Mobile Backend-as-a-Service (MBaaS)",
+                strong: true,
+              },
+              {
+                text: " product using Node.js (Flatiron framework) and React.",
+              },
+            ],
+          },
+          {
+            segments: [
+              {
+                text: "Gained foundational experience with non-blocking I/O, event loop mechanics, and asynchronous architecture in JavaScript.",
+              },
+            ],
+          },
+        ],
       },
     ] satisfies WorkExperience[],
   },
@@ -383,12 +375,18 @@ export const experienceContent = {
   },
 } as const;
 
-export function experienceAccordionTitle(
-  company: string,
-  startDate: string,
-  endDate: string,
-): string {
-  return `${company} (${startDate} - ${endDate})`;
+export function workExperienceLabel(experience: {
+  role: string;
+  company: string;
+}): string {
+  return `${experience.role}, ${experience.company}`;
+}
+
+export function workExperienceDateRange(experience: {
+  startDate: string;
+  endDate: string;
+}): string {
+  return `${experience.startDate} - ${experience.endDate}`;
 }
 
 export function experienceLinePlainText(line: ExperienceLine): string {
