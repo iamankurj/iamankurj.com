@@ -8,6 +8,7 @@
 - [x] Revamp the Experience page
 - [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
 - [x] Add sitemap and robots.txt and page Meta/Schema so the site is indexable (shared OG image for now)
+- [x] Add a [Dedicated Contact/Availability Section](contact-section-spec.md) (LinkedIn CTA in footer for now; email later)
 - [ ] Ask Google to index
   - [ ] Go to https://search.google.com/search-console
   - [ ] Add property for https://iamankurj.com (Domain or URL-prefix). Verify ownership (DNS TXT is usual for Domain; HTML file/meta tag for URL-prefix).
