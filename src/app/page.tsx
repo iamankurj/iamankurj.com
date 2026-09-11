@@ -37,6 +37,7 @@ export default function Home() {
         title={meta.home.title}
         description={meta.home.description}
         path={meta.home.path}
+        image={meta.home.image}
       />
       <Column maxWidth="s" gap="40" s={{ gap: 2 }}>
         <Column gap="s" align="center" horizontal="center">

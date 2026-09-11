@@ -5,9 +5,9 @@
 - [x] Change the background of the tech pages
 - [x] Add Github Repo link for iamankurj.com project
 - [x] Add [CourseCorrect](https://coursecorrect.fyi/)
-- [ ] Revamp the Experience page
+- [x] Revamp the Experience page
 - [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
-- [ ] Add sitemap and robots.txt and anything else needed for SEO (Once-UI Meta, Schema, ...). Experience page for one isn't SEO ready
+- [x] Add sitemap and robots.txt and page Meta/Schema so the site is indexable (shared OG image for now)
 - [ ] Ask Google to index
   - [ ] Go to https://search.google.com/search-console
   - [ ] Add property for https://iamankurj.com (Domain or URL-prefix). Verify ownership (DNS TXT is usual for Domain; HTML file/meta tag for URL-prefix).
@@ -22,9 +22,9 @@
   - [ ] Find your result.
   - [ ] Screenshot just that one result card (crop out other results if you want it clean).
 - [ ] Consider adding the name, company and LinkedIn link of the author in testimonials
-- [ ] Consider adding breadcrumb navigation for projects (since they're not part of the header)?
 - [ ] Should we add the location and local time (similar to magic portfolio)
 - [ ] Should we add the languages I speak (similar to magic portfolio)
 - [ ] Is it possible to have a custom icon ("a" logo) as a prefixIcon for the Home button?
+- [ ] Add unique OG images per page / section (home, experience, projects) when ready
 - [ ] Check if it's possible to have `accent-alpha-weak` for Badge background but weaker than weak (or another shade)
 - [ ] What is the purpose of iamankurj.com/src/resources/seo.js:schema and what email should be used there?

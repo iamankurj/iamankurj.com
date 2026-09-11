@@ -9,7 +9,7 @@ import { Header } from '@/components/Header';
 import { Providers } from '@/components/Providers';
 import { dataStyle, fonts, style } from "@/resources/once-ui.config";
 import { baseURL, meta } from "@/resources/seo";
-import { Column, Flex, Meta, Row, Schema, ThemeInit } from "@once-ui-system/core";
+import { Column, Flex, Meta, Row, ThemeInit } from "@once-ui-system/core";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -42,13 +42,6 @@ export default function RootLayout({
         fonts.code.variable,
       )}
     >
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title={meta.home.title}
-        description={meta.home.description}
-        path={meta.home.path}
-      />
       <head>
         <ThemeInit
           config={{
