@@ -1,8 +1,9 @@
 import {
   Background,
-  Button,
+  Badge,
   Column,
   Heading,
+  Icon,
   IconButton,
   Row,
   SmartLink,
@@ -51,7 +52,7 @@ export function Footer() {
           horizontal="center"
           align="center"
         >
-          <Heading as="h2" variant="heading-strong-l" align="center">
+          <Heading as="h2" variant="heading-medium-l" align="center">
             {title}
           </Heading>
           <Column maxWidth="xs" fillWidth horizontal="center">
@@ -64,16 +65,26 @@ export function Footer() {
               {availability}
             </Text>
           </Column>
-          <Button
-            id={linkedInCta.id}
+          <SmartLink
             href={linkedInCta.href}
             target="_blank"
             rel="noopener noreferrer"
-            data-border="rounded"
-            suffixIcon="arrowUpRight"
+            unstyled
           >
-            {linkedInCta.label}
-          </Button>
+            <Badge
+              id={linkedInCta.id}
+              arrow={false}
+              background="overlay"
+              border="neutral-alpha-medium"
+              onBackground="neutral-strong"
+              textVariant="label-normal-s"
+              vertical="center"
+              gap="8"
+            >
+              {linkedInCta.label}
+              <Icon name="arrowUpRight" size="xs" onBackground="brand-medium" />
+            </Badge>
+          </SmartLink>
         </Column>
       </Column>
 

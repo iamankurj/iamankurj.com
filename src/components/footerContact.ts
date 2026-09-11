@@ -10,7 +10,7 @@ if (!linkedIn) {
 export const footerContact = {
   title: "Interested in working together?",
   availability:
-    "I'm currently available for senior product engineering roles and select contract/advisory engagements.",
+    "I’m open to remote contract engagements, technical advisory, and select senior product engineering roles.",
   linkedInCta: {
     id: "footer-contact-linkedin",
     label: "Reach Out via LinkedIn",
