@@ -6,19 +6,19 @@
 - [x] Add Github Repo link for iamankurj.com project
 - [x] Add [CourseCorrect](https://coursecorrect.fyi/)
 - [x] Revamp the Experience page
-- [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
+- [x] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
   - [x] Draft `content/projects/client-websites.md` (order 3; image assets still TODO)
-  - [ ] Add images under `public/images/projects/client-websites/`
+  - [x] Add images under `public/images/projects/client-websites/`
 - [x] Add sitemap and robots.txt and page Meta/Schema so the site is indexable (shared OG image for now)
 - [x] Add a [Dedicated Contact/Availability Section](contact-section-spec.md) (LinkedIn CTA in footer for now; email later)
-- [ ] Ask Google to index
-  - [ ] Go to https://search.google.com/search-console
-  - [ ] Add property for https://iamankurj.com (Domain or URL-prefix). Verify ownership (DNS TXT is usual for Domain; HTML file/meta tag for URL-prefix).
-  - [ ] Open URL Inspection (top search bar).
-  - [ ] Paste https://iamankurj.com/ and wait for the check.
-  - [ ] If it says not on Google, click Request indexing.
-  - [ ] Repeat for important URLs (/tech/projects, /tech/experience, key project pages).
-  - [ ] Optional: Sitemaps → submit https://iamankurj.com/sitemap.xml (only if that file exists and is live).
+- [x] Ask Google to index
+  - [x] Go to https://search.google.com/search-console
+  - [x] Add property for https://iamankurj.com (Domain or URL-prefix). Verify ownership (DNS TXT is usual for Domain; HTML file/meta tag for URL-prefix).
+  - [x] Open URL Inspection (top search bar).
+  - [x] Paste https://iamankurj.com/ and wait for the check.
+  - [x] If it says not on Google, click Request indexing.
+  - [ ] Repeat for important URLs (/tech/projects, /tech/experience, key project pages). (not needed)
+  - [x] Optional: Sitemaps → submit https://iamankurj.com/sitemap.xml (only if that file exists and is live).
 - [ ] Replace WhatsApp image with Google SERP image
   - [ ] Open Google in an incognito window (less personalized).
   - [ ] Search something specific, e.g. site:iamankurj.com or "Ankur Jain" Product Engineer.
