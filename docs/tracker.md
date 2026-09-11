@@ -7,6 +7,8 @@
 - [x] Add [CourseCorrect](https://coursecorrect.fyi/)
 - [x] Revamp the Experience page
 - [ ] Add [NTA Therapy](https://www.ntatherapy.com/) and [Imad Al Rifat](https://imadalrifat.ae/) as projects
+  - [x] Draft `content/projects/client-websites.md` (order 3; image assets still TODO)
+  - [ ] Add images under `public/images/projects/client-websites/`
 - [x] Add sitemap and robots.txt and page Meta/Schema so the site is indexable (shared OG image for now)
 - [x] Add a [Dedicated Contact/Availability Section](contact-section-spec.md) (LinkedIn CTA in footer for now; email later)
 - [ ] Ask Google to index
