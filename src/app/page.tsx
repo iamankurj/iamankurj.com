@@ -99,7 +99,8 @@ export default function Home() {
                 wrap="balance"
                 marginBottom="1"
               >
-                I’m a product engineer with over 10 years of experience. Today, I focus on building software that solves real-world problems.
+                I’m a product engineer with over 10 years of experience.
+                I bridge product strategy and backend architecture, building software focused on business ROI, unit economics, and rapid execution.
               </Text>
               <Text
                 variant="body-default-l"

@@ -50,7 +50,7 @@ The production shape is a small GCP system with a clear boundary between **colle
 | Embeddings | Vertex `text-embedding-004` (768-d)                   | Same GCP project/billing; HNSW cosine for semantic recall                                                                                                                                                                       |
 | Hosting    | Cloud Run + Scheduler + Secret Manager                | Job/API/frontend in one ops model; secrets out of env files                                                                                                                                                                     |
 
-Skipped on purpose for 1.5: a separate search SaaS, a headless CMS for catalogue content, and paywalled personalization (deferred to 2.0). The constraint was a small founding team that needed control over data quality and monthly run cost more than platform abstraction.
+- **Architectural Pragmatism & Cost Discipline:** Built production-grade hybrid vector search and LLM extraction on GCP serverless primitives and Cloud SQL, deliberately skipping dedicated search SaaS platforms and headless CMS abstractions to keep monthly infrastructure run costs near zero without sacrificing data quality or retrieval performance.
 
 ## Engineering Trade-offs
 
