@@ -39,6 +39,7 @@ describe("experienceContent", () => {
     const experiences = experienceContent.work.experiences;
 
     expect(experiences.map((experience) => experience.company)).toEqual([
+      "CourseCorrect",
       "Flybits",
       "Meta",
       "Flybits",
@@ -47,6 +48,24 @@ describe("experienceContent", () => {
       "Built.io (Raw Eng.)",
     ]);
     expect(experiences[0]).toMatchObject({
+      role: "Co-Founder & CTO",
+      company: "CourseCorrect",
+      startDate: "June 2025",
+      endDate: "Present",
+      state: "active",
+      links: [
+        {
+          label: "Live product",
+          href: "https://coursecorrect.fyi",
+          external: true,
+        },
+        {
+          label: "Case study",
+          href: "/tech/projects/coursecorrect",
+        },
+      ],
+    });
+    expect(experiences[1]).toMatchObject({
       role: "Senior Software Engineering Consultant",
       startDate: "Apr 2023",
       endDate: "Dec 2025",
@@ -54,8 +73,8 @@ describe("experienceContent", () => {
       tags: ["GoLang", "Microservices", "System Design", "UI/UX Strategy"],
       state: "default",
     });
-    expect(experiences[0].achievements).toHaveLength(5);
-    expect(experienceLinePlainText(experiences[0].achievements[0])).toContain(
+    expect(experiences[1].achievements).toHaveLength(5);
+    expect(experienceLinePlainText(experiences[1].achievements[0])).toContain(
       "Flow Visualizer",
     );
     expect(experiences.at(-1)?.role).toBe("Software Engineering Intern");

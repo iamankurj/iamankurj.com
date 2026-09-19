@@ -4,6 +4,7 @@ import {
   List,
   ListItem,
   Row,
+  SmartLink,
   Tag,
   Text,
   Timeline,
@@ -14,7 +15,7 @@ import {
   experienceContent,
   experienceLinePlainText,
   type ExperienceLine,
-  type WorkExperience
+  type WorkExperience,
 } from "@/resources/experience";
 
 function AchievementSegments({ line }: { line: ExperienceLine }) {
@@ -38,9 +39,35 @@ function AchievementSegments({ line }: { line: ExperienceLine }) {
 function ExperienceTimelineBody({ experience }: { experience: WorkExperience }) {
   return (
     <Column gap="12" fillWidth paddingTop="8">
-      <Text variant="label-default-s" onBackground="brand-medium">
+      <Text variant="label-default-m" onBackground="neutral-medium">
         {experience.roleFocus}
       </Text>
+
+      {experience.links && experience.links.length > 0 ? (
+        <Row gap="16" wrap>
+          {experience.links.map((link) =>
+            link.external ? (
+              <SmartLink
+                key={link.href}
+                href={link.href}
+                suffixIcon="arrowUpRight"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Text variant="label-default-s" onBackground="brand-medium">
+                  {link.label}
+                </Text>
+              </SmartLink>
+            ) : (
+              <SmartLink key={link.href} href={link.href} suffixIcon="chevronRight">
+                <Text variant="label-default-s" onBackground="brand-medium">
+                  {link.label}
+                </Text>
+              </SmartLink>
+            ),
+          )}
+        </Row>
+      ) : null}
 
       {experience.tags.length > 0 ? (
         <Row gap="8" wrap>
@@ -83,7 +110,11 @@ export function ExperienceWork() {
         alignment="left"
         size="xs"
         items={work.experiences.map((experience) => ({
-          label: <Row marginBottom="16" textVariant="label-medium-l">{experience.role}, {experience.company}</Row>,
+          label: (
+            <Row marginBottom="16" textVariant="label-medium-l">
+              {experience.role}, {experience.company}
+            </Row>
+          ),
           description: `${experience.startDate} - ${experience.endDate}`,
           state: experience.state ?? "default",
           children: <ExperienceTimelineBody experience={experience} />,
