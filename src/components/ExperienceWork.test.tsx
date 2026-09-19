@@ -46,6 +46,20 @@ vi.mock("@once-ui-system/core", () => ({
   Tag: ({ label }: { label?: string }) => (
     <span data-testid="once-tag">{label}</span>
   ),
+  SmartLink: ({
+    href,
+    children,
+    ...rest
+  }: {
+    href?: string;
+    children?: ReactNode;
+    target?: string;
+    rel?: string;
+  }) => (
+    <a data-testid="once-smart-link" href={href} {...rest}>
+      {children}
+    </a>
+  ),
   List: ({ children }: { children?: ReactNode }) => <ul>{children}</ul>,
   ListItem: ({ children }: { children?: ReactNode }) => <li>{children}</li>,
   Text: ({ children }: { children?: ReactNode }) => <span>{children}</span>,
@@ -77,5 +91,13 @@ describe("ExperienceWork", () => {
     expect(
       screen.getByText("Server Engineer (Well-Being Engineering), Meta"),
     ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Live product" })).toHaveAttribute(
+      "href",
+      "https://coursecorrect.fyi",
+    );
+    expect(screen.getByRole("link", { name: "Case study" })).toHaveAttribute(
+      "href",
+      "/tech/projects/coursecorrect",
+    );
   });
 });

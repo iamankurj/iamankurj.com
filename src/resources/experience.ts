@@ -1,3 +1,5 @@
+import { projectPath } from "@/resources/projects";
+
 export type ExperienceTextSegment = {
   text: string;
   strong?: boolean;
@@ -10,6 +12,13 @@ export type ExperienceLine = {
 
 export type WorkTimelineState = "default" | "active";
 
+export type WorkExperienceLink = {
+  label: string;
+  href: string;
+  /** Opens in a new tab when true (live products, external sites). */
+  external?: boolean;
+};
+
 export type WorkExperience = {
   company: string;
   role: string;
@@ -19,6 +28,8 @@ export type WorkExperience = {
   tags: string[];
   /** Timeline marker state; omit or use `"default"` for past roles. */
   state?: WorkTimelineState;
+  /** Optional product / case-study links shown under role focus. */
+  links?: WorkExperienceLink[];
   achievements: ExperienceLine[];
 };
 
@@ -97,6 +108,68 @@ export const experienceContent = {
   work: {
     title: "Career History",
     experiences: [
+      {
+        company: "CourseCorrect",
+        role: "Co-Founder & CTO",
+        startDate: "June 2025",
+        endDate: "Present",
+        roleFocus: "Full-Stack Architecture, AI Search Systems & Product Ownership",
+        tags: ["Typescript", "Node.js", "Next.js", "PostgreSQL", "pgvector", "tsvector", "GCP", "Vertex AI", "Docker"],
+        state: "active",
+        links: [
+          {
+            label: "Live product",
+            href: "https://coursecorrect.fyi",
+            external: true,
+          },
+          {
+            label: "Case study",
+            href: projectPath("coursecorrect"),
+          },
+        ],
+        achievements: [
+          {
+            segments: [
+              { text: "Full-Stack Architecture & Strategy:", strong: true },
+              {
+                text: " Architected and engineered an AI-powered course discovery platform end-to-end (Next.js 15, Hono, PostgreSQL, Vertex AI), aggregating and normalizing MOOC offerings across major learning platforms (Coursera, edX, Udemy, etc.).",
+              },
+            ],
+          },
+          {
+            segments: [
+              { text: "Hybrid Vector & Keyword Search:", strong: true },
+              {
+                text: " Migrated search architecture from MongoDB/Qdrant to PostgreSQL (pgvector + tsvector), slashing infrastructure run costs while enabling hybrid keyword and 768-d vector retrieval.",
+              },
+            ],
+          },
+          {
+            segments: [
+              { text: "Automated Data Pipelines:", strong: true },
+              {
+                text: " Built scalable crawling and extraction workflows using GCP Cloud Run, Crawlee, Playwright, and Node.js/TypeScript to generate structured course schemas via Gemini AI.",
+              },
+            ],
+          },
+          {
+            segments: [
+              { text: "Full-Stack UI & State Management:", strong: true },
+              {
+                text: " Designed a fully responsive Next.js 15 interface featuring a reusable split-view paradigm, real-time shortlist synchronization, stateful bookmark limits, and session-aware chat persistence across routes.",
+              },
+            ],
+          },
+          {
+            segments: [
+              { text: "Conversational RAG Assistant (\"Cora\"):", strong: true },
+              {
+                text: " Developed an SSE-streaming AI assistant using Hono (Node.js framework) and Vertex AI embeddings with catalogue grounding.",
+              },
+            ],
+          },
+        ],
+      },
       {
         company: "Flybits",
         role: "Senior Software Engineering Consultant",
